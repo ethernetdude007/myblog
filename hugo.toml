@@ -100,11 +100,11 @@ pagination.pagerSize = 5
           identifier = "AboutMe"
           name = "AboutMe"
           url = "/AboutMe"
-        [[languages.en.menu.main]]
+        [languages.en.menu.main]
           identifier = "GCP"
           name = "GCP"
           url = "/GCP"
-          [languages.en.menu.main]
+        [languages.en.menu.main]
           identifier = " ACI"
           name = "ACI"
           url = "/ACI"
