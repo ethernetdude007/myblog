@@ -105,6 +105,6 @@ pagination.pagerSize = 5
           name = "GCP"
           url = "/GCP"
         [languages.en.menu.main]
-          identifier = " ACI"
+          identifier = "ACI"
           name = "ACI"
           url = "/ACI"
