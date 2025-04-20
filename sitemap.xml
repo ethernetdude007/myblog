@@ -12,6 +12,8 @@
   </url><url>
     <loc>/categories/</loc>
   </url><url>
+    <loc>/</loc>
+  </url><url>
     <loc>/tags/ethernetdude/</loc>
   </url><url>
     <loc>/tags/gcp/</loc>
@@ -21,7 +23,5 @@
     <loc>/posts/</loc>
   </url><url>
     <loc>/tags/</loc>
-  </url><url>
-    <loc>/</loc>
   </url>
 </urlset>
