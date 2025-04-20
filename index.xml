@@ -9,6 +9,13 @@
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
+      <link>/posts/please-work/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/posts/please-work/</guid>
+      <description>&lt;p&gt;This is a sample to check if my auto posting thing is working or not.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
       <link>/posts/this-is-a-new-test-file/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/posts/this-is-a-new-test-file/</guid>
