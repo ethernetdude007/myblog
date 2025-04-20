@@ -61,7 +61,7 @@ pagination.pagerSize = 5
   # Default value (no changes needed):
   # dateFormat = "2006-01-02"
   # Example format, with date, time, and timezone abbreviation:
-  # dateFormat = "2006-01-02 3:04:06 PM MST"
+  # dateFormat = "2006-01-02 3:04:06 PM IST"
 
 
 [params.twitter]
