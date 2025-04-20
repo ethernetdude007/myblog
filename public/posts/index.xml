@@ -22,6 +22,13 @@
       <description>&lt;p&gt;this is a new test file to see if obsidian is adding my files automatically or not&lt;/p&gt;</description>
     </item>
     <item>
+      <title></title>
+      <link>/posts/this-is-final-testing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/posts/this-is-final-testing/</guid>
+      <description>&lt;p&gt;![[Pasted image 20250420161818.png]]&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>My insane blog post</title>
       <link>/posts/my-insane-blog-pipeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
