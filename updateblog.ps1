@@ -39,13 +39,13 @@ foreach ($cmd in $requiredCommands) {
 if (-not (Test-Path ".git")) {
     Write-Host "Initializing Git repository..."
     git init
-    git remote add origin $myrepo
+    git remote add origin1 $myrepo
 } else {
     Write-Host "Git repository already initialized."
     $remotes = git remote
-    if (-not ($remotes -contains 'origin')) {
-        Write-Host "Adding remote origin..."
-        git remote add origin $myrepo
+    if (-not ($remotes -contains 'origin1')) {
+        Write-Host "Adding remote origin1..."
+        git remote add origin1 $myrepo
     }
 }
 
@@ -117,7 +117,7 @@ if (-not $hasStagedChanges) {
 # Step 7: Push all changes to the main branch
 Write-Host "Deploying to GitHub Master..."
 try {
-    git push origin master
+    git push origin1 master
 } catch {
     Write-Error "Failed to push to Master branch."
     exit 1
@@ -142,7 +142,7 @@ try {
 
 # Push to hostinger branch with force
 try {
-    git push origin hostinger-deploy:hostinger --force
+    git push origin1 hostinger-deploy:hostinger --force
 } catch {
     Write-Error "Failed to push to hostinger branch."
     git branch -D hostinger-deploy
