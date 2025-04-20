@@ -96,15 +96,35 @@ pagination.pagerSize = 5
         logoHomeLink = "/"
 
       [languages.en.menu]
-        [[languages.en.menu.main]]
-          identifier = "AboutMe"
-          name = "AboutMe"
-          url = "/AboutMe"
-        [languages.en.menu.main]
-          identifier = "GCP"
-          name = "GCP"
-          url = "/GCP"
-        [languages.en.menu.main]
-          identifier = "ACI"
-          name = "ACI"
-          url = "/ACI"
+  [[languages.en.menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[languages.en.menu.main]]
+    identifier = "aboutme"
+    name = "About Me"
+    url = "/aboutme/"
+    weight = 2
+
+  [[languages.en.menu.main]]
+    identifier = "contents"
+    name = "Contents"
+    url = "#"
+    weight = 3
+
+  [[languages.en.menu.main]]
+    parent = "contents"
+    name = "Networking"
+    url = "/networking/"
+
+  [[languages.en.menu.main]]
+    parent = "contents"
+    name = "GCP"
+    url = "/gcp/"
+
+  [[languages.en.menu.main]]
+    parent = "contents"
+    name = "Automation"
+    url = "/automation/"
