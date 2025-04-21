@@ -109,18 +109,12 @@ pagination.pagerSize = 5
     weight = 2
 
   [[languages.en.menu.main]]
-    identifier = "contents"
-    name = "Contents"
-    url = "#"
-    weight = 3
-
-  [[languages.en.menu.main]]
     name = "Networking"
     url = "/networking/"
     weight = 3
 
   [[languages.en.menu.main]]
-    name = "GCP"
+    name = "Google Cloud"
     url = "/gcp/"
     weight = 3
 
