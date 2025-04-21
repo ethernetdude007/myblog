@@ -115,19 +115,16 @@ pagination.pagerSize = 5
     weight = 3
 
   [[languages.en.menu.main]]
-    parent = "contents"
     name = "Networking"
     url = "/networking/"
     weight = 3
 
   [[languages.en.menu.main]]
-    parent = "contents"
     name = "GCP"
     url = "/gcp/"
     weight = 3
 
   [[languages.en.menu.main]]
-    parent = "contents"
     name = "Automation"
     url = "/automation/"
     weight = 3
