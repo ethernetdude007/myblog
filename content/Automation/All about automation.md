@@ -1,1 +1,0 @@
-In this I will show you all about automation.

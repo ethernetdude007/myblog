@@ -2,21 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/automation/all-about-automation/</loc>
-  </url><url>
-    <loc>/gcp/this-is-the-page-where-we-talk-google-cloud/</loc>
-  </url><url>
-    <loc>/home/hello-krutwik-/</loc>
-  </url><url>
-    <loc>/networking/please-work/</loc>
-  </url><url>
-    <loc>/networking/this-is-a-new-test-file/</loc>
-  </url><url>
-    <loc>/aboutme/aboutme/</loc>
-  </url><url>
-    <loc>/aboutme/</loc>
-  </url><url>
-    <loc>/automation/</loc>
+    <loc>/tags/blogpost/</loc>
   </url><url>
     <loc>/categories/</loc>
   </url><url>
@@ -24,16 +10,10 @@
   </url><url>
     <loc>/tags/ethernetdude/</loc>
   </url><url>
-    <loc>/tags/gcp/</loc>
-  </url><url>
-    <loc>/gcp/</loc>
-  </url><url>
     <loc>/home/</loc>
   </url><url>
-    <loc>/networking/my-insane-blog-pipeline/</loc>
-  </url><url>
-    <loc>/networking/</loc>
-  </url><url>
     <loc>/tags/</loc>
+  </url><url>
+    <loc>/home/why-i-started-this-blog/</loc>
   </url>
 </urlset>
