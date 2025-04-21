@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ethernetdude</title>
-    <link>/</link>
-    <description>Recent content on ethernetdude</description>
+    <title>Blogpost on ethernetdude</title>
+    <link>/tags/blogpost/</link>
+    <description>Recent content in Blogpost on ethernetdude</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/blogpost/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Why &amp; How I started this Blog</title>
       <link>/home/why-i-started-this-blog/</link>
