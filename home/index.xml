@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homes on ethernetdude</title>
-    <link>/home/home/</link>
+    <link>/home/</link>
     <description>Recent content in Homes on ethernetdude</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="/home/home/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/home/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>/home/home/this-is-final-testing/</link>
+      <link>/home/this-is-final-testing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/home/home/this-is-final-testing/</guid>
-      <description>&lt;p&gt;!&lt;img src=&#34;/home/images/Pasted%20image%2020250420161818.png&#34; alt=&#34;Image Description&#34;&gt;&lt;/p&gt;</description>
+      <guid>/home/this-is-final-testing/</guid>
+      <description>&lt;p&gt;!&lt;img src=&#34;/images/Pasted%20image%2020250420161818.png&#34; alt=&#34;Image Description&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>/home/home/this-is-just--test-file/</link>
+      <link>/home/this-is-just--test-file/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/home/home/this-is-just--test-file/</guid>
+      <guid>/home/this-is-just--test-file/</guid>
       <description>&lt;p&gt;Testing if everything is working as expected or not![[Pasted image 20250420161818.png]]&lt;/p&gt;</description>
     </item>
   </channel>

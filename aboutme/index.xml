@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Aboutmes on ethernetdude</title>
-    <link>/home/aboutme/</link>
+    <link>/aboutme/</link>
     <description>Recent content in Aboutmes on ethernetdude</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="/home/aboutme/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/aboutme/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About Me</title>
-      <link>/home/aboutme/aboutme/</link>
+      <link>/aboutme/aboutme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/home/aboutme/aboutme/</guid>
+      <guid>/aboutme/aboutme/</guid>
       <description>&lt;p&gt;Hi, I&amp;rsquo;m Ethernet Dude. I&amp;rsquo;m passionate about networking, automation, and cloud tech. Welcome to my corner of the internet.&lt;/p&gt;</description>
     </item>
   </channel>
