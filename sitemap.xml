@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/home/this-is-final-testing/</loc>
+  </url><url>
+    <loc>/home/this-is-just--test-file/</loc>
+  </url><url>
     <loc>/networking/please-work/</loc>
   </url><url>
     <loc>/networking/this-is-a-new-test-file/</loc>
-  </url><url>
-    <loc>/networking/this-is-final-testing/</loc>
-  </url><url>
-    <loc>/networking/this-is-just--test-file/</loc>
   </url><url>
     <loc>/aboutme/aboutme/</loc>
   </url><url>
@@ -21,6 +21,8 @@
     <loc>/tags/ethernetdude/</loc>
   </url><url>
     <loc>/tags/gcp/</loc>
+  </url><url>
+    <loc>/home/</loc>
   </url><url>
     <loc>/networking/my-insane-blog-pipeline/</loc>
   </url><url>
