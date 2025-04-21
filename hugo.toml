@@ -1,4 +1,4 @@
-baseurl = "/home"
+baseurl = "/"
 languageCode = "en-us"
 # Add it only if you keep the theme in the `themes` directory.
 # Remove it if you use the theme as a remote Hugo Module.
@@ -99,7 +99,7 @@ pagination.pagerSize = 5
   [[languages.en.menu.main]]
     identifier = "home"
     name = "Home"
-    url = "/"
+    url = "/home"
     weight = 1
 
   [[languages.en.menu.main]]
