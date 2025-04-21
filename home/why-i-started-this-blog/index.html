@@ -264,80 +264,140 @@ rsync -av &ndash;delete &ldquo;source path&rdquo; &ldquo;destination path&rdquo;
 <p>Now navigate to the Hugo Directory, under the Hugo folder, navigate to the static folder &amp; create a directory called images in it.</p>
 <p>Navigate to the Hugo home folder, create a file called images.py &amp; use the below script. once done. run the code using <code>python3 images.py</code> command.</p>
 <p><strong>Windows:</strong></p>
-<pre tabindex="0"><code>`import os`
-`import re`
-`import shutil`
+<pre tabindex="0"><code>import os
 
-###### `Paths (using raw strings to handle Windows backslashes correctly)`
-`posts_dir = r&#34;&#34;`
-`attachments_dir = r&#34;&#34;`
-`static_images_dir = r&#34;&#34;`
+import re
 
-###### `Step 1: Process each markdown file in the posts directory`
-`for filename in os.listdir(posts_dir):`
-    `if filename.endswith(&#34;.md&#34;):`
-        `filepath = os.path.join(posts_dir, filename)`
-        
-        `with open(filepath, &#34;r&#34;, encoding=&#34;utf-8&#34;) as file:`
-            `content = file.read()`
-        
-        `# Step 2: Find all image links in the format ![Image Description](/images/Pasted%20image%20...%20.png)`
-        `images = re.findall(r&#39;\[\[([^]]*\.png)\]\]&#39;, content)`
-        
-        `# Step 3: Replace image links and ensure URLs are correctly formatted`
-        `for image in images:`
-            `# Prepare the Markdown-compatible link with %20 replacing spaces`
-            `markdown_image = f&#34;![Image Description](/images/{image.replace(&#39; &#39;, &#39;%20&#39;)})&#34;`
-            `content = content.replace(f&#34;[[{image}]]&#34;, markdown_image)`
-            
-            `# Step 4: Copy the image to the Hugo static/images directory if it exists`
-            `image_source = os.path.join(attachments_dir, image)`
-            `if os.path.exists(image_source):`
-                `shutil.copy(image_source, static_images_dir)`
+import shutil
 
-        `# Step 5: Write the updated content back to the markdown file`
-        `with open(filepath, &#34;w&#34;, encoding=&#34;utf-8&#34;) as file:`
-            `file.write(content)`
+  
 
-`print(&#34;Markdown files processed and images copied successfully.&#34;)`
+# Paths
+
+posts_dir = r&#34;D:\ethernetdude\Posts\blogposts&#34;
+
+attachments_dir = r&#34;D:\ethernetdude\Posts\blogposts\attachments&#34;
+
+static_images_dir = r&#34;C:\Users\kapil\Documents\ethernetdude\static\images&#34;
+
+  
+
+# Make sure static image dir exists
+
+os.makedirs(static_images_dir, exist_ok=True)
+
+  
+
+# Go through every .md file in subdirectories
+
+for root, dirs, files in os.walk(posts_dir):
+
+    for filename in files:
+
+        if filename.endswith(&#34;.md&#34;):
+
+            filepath = os.path.join(root, filename)  # ✅ define filepath inside the loop
+
+  
+
+            with open(filepath, &#34;r&#34;, encoding=&#34;utf-8&#34;) as file:
+
+                content = file.read()
+
+  
+
+            images = re.findall(r&#39;\[\[([^]]*\.(?:png|jpg|jpeg|webp))\]\]&#39;, content, re.IGNORECASE)
+
+  
+
+            for image in images:
+
+                markdown_image = f&#34;![Image Description](/images/{image.replace(&#39; &#39;, &#39;%20&#39;)})&#34;
+
+                content = content.replace(f&#34;[[{image}]]&#34;, markdown_image)
+
+  
+
+                image_source = os.path.join(attachments_dir, image)
+
+                image_target = os.path.join(static_images_dir, image)
+
+  
+
+                if os.path.exists(image_source):
+
+                    if not os.path.exists(image_target):
+
+                        shutil.copy(image_source, image_target)
+
+                        print(f&#34;Copied: {image}&#34;)
+
+                    else:
+
+                        print(f&#34;Already exists: {image}&#34;)
+
+                else:
+
+                    print(f&#34;⚠️ Missing: {image_source}&#34;)
+
+  
+
+            with open(filepath, &#34;w&#34;, encoding=&#34;utf-8&#34;) as file:
+
+                file.write(content)
+
+  
+
+print(&#34;✅ All markdown files processed.&#34;)
 </code></pre><p><strong>MAC:</strong></p>
 <pre tabindex="0"><code>
 import os
 import re
 import shutil
 
-# Paths
-posts_dir = &#34;&#34;
-attachments_dir = &#34;&#34;
-static_images_dir = &#34;&#34;
+# ✅ Update these paths for your Mac environment
+posts_dir = &#34;/Users/kapil/ethernetdude/Posts/blogposts&#34;
+attachments_dir = &#34;/Users/kapil/ethernetdude/Posts/blogposts/attachments&#34;
+static_images_dir = &#34;/Users/kapil/Documents/ethernetdude/static/images&#34;
 
-# Step 1: Process each markdown file in the posts directory
-for filename in os.listdir(posts_dir):
-    if filename.endswith(&#34;.md&#34;):
-        filepath = os.path.join(posts_dir, filename)
-        
-        with open(filepath, &#34;r&#34;) as file:
-            content = file.read()
-        
-        # Step 2: Find all image links in the format ![Image Description](/images/Pasted%20image%20...%20.png)
-        images = re.findall(r&#39;\[\[([^]]*\.png)\]\]&#39;, content)
-        
-        # Step 3: Replace image links and ensure URLs are correctly formatted
-        for image in images:
-            # Prepare the Markdown-compatible link with %20 replacing spaces
-            markdown_image = f&#34;![Image Description](/images/{image.replace(&#39; &#39;, &#39;%20&#39;)})&#34;
-            content = content.replace(f&#34;[[{image}]]&#34;, markdown_image)
-            
-            # Step 4: Copy the image to the Hugo static/images directory if it exists
-            image_source = os.path.join(attachments_dir, image)
-            if os.path.exists(image_source):
-                shutil.copy(image_source, static_images_dir)
+# Ensure the target static/images folder exists
+os.makedirs(static_images_dir, exist_ok=True)
 
-        # Step 5: Write the updated content back to the markdown file
-        with open(filepath, &#34;w&#34;) as file:
-            file.write(content)
+# Walk through all markdown files in posts and subfolders
+for root, dirs, files in os.walk(posts_dir):
+    for filename in files:
+        if filename.endswith(&#34;.md&#34;):
+            filepath = os.path.join(root, filename)
 
-print(&#34;Markdown files processed and images copied successfully.&#34;)
+            with open(filepath, &#34;r&#34;, encoding=&#34;utf-8&#34;) as file:
+                content = file.read()
+
+            # Match Obsidian-style images like [[image.png]]
+            images = re.findall(r&#39;\[\[([^]]*\.(?:png|jpg|jpeg|webp))\]\]&#39;, content, re.IGNORECASE)
+
+            for image in images:
+                # Replace with Hugo-compatible markdown image syntax
+                markdown_image = f&#34;![Image Description](/images/{image.replace(&#39; &#39;, &#39;%20&#39;)})&#34;
+                content = content.replace(f&#34;[[{image}]]&#34;, markdown_image)
+
+                # Copy image to Hugo static/images if it exists
+                image_source = os.path.join(attachments_dir, image)
+                image_target = os.path.join(static_images_dir, image)
+
+                if os.path.exists(image_source):
+                    if not os.path.exists(image_target):
+                        shutil.copy(image_source, image_target)
+                        print(f&#34;✅ Copied: {image}&#34;)
+                    else:
+                        print(f&#34;ℹ️ Already exists: {image}&#34;)
+                else:
+                    print(f&#34;⚠️ Missing image: {image_source}&#34;)
+
+            # Save the updated markdown file
+            with open(filepath, &#34;w&#34;, encoding=&#34;utf-8&#34;) as file:
+                file.write(content)
+
+print(&#34;✅ All markdown files processed and image links updated.&#34;)
 </code></pre><p>The Script should run correctly, if your directories are set correctly. You should set the posts directory, attachments directory &amp; static images folder you created in Hugo home folder correctly. Once the script runs successfully, you should see that the images from your Obsidian are getting copied to the images folder you created under static folder. Now, back to your terminal, run the Hugo server locally again &amp; see if the images are getting formatted properly.</p>
 <p>So, at this point, you have obsidian, pushing the code to Hugo and the website is working fine. Now, we need to push our site to GitHub.</p>
 <p>Login to GitHub &amp; click new &amp; create a new repository. You can name it whatever you want, I am just calling mine as &ldquo;myblog&rdquo;. You can choose to make your repository either public or private. I will just leave mine to public.</p>
