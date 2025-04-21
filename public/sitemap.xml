@@ -2,40 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/automation/all-about-automation/</loc>
+    <loc>/home/automation/all-about-automation/</loc>
   </url><url>
-    <loc>/gcp/this-is-the-page-where-we-talk-google-cloud/</loc>
+    <loc>/home/gcp/this-is-the-page-where-we-talk-google-cloud/</loc>
   </url><url>
-    <loc>/home/this-is-final-testing/</loc>
+    <loc>/home/home/this-is-final-testing/</loc>
   </url><url>
-    <loc>/home/this-is-just--test-file/</loc>
+    <loc>/home/home/this-is-just--test-file/</loc>
   </url><url>
-    <loc>/networking/please-work/</loc>
+    <loc>/home/networking/please-work/</loc>
   </url><url>
-    <loc>/networking/this-is-a-new-test-file/</loc>
+    <loc>/home/networking/this-is-a-new-test-file/</loc>
   </url><url>
-    <loc>/aboutme/aboutme/</loc>
+    <loc>/home/aboutme/aboutme/</loc>
   </url><url>
-    <loc>/aboutme/</loc>
+    <loc>/home/aboutme/</loc>
   </url><url>
-    <loc>/automation/</loc>
+    <loc>/home/automation/</loc>
   </url><url>
-    <loc>/categories/</loc>
-  </url><url>
-    <loc>/</loc>
-  </url><url>
-    <loc>/tags/ethernetdude/</loc>
-  </url><url>
-    <loc>/tags/gcp/</loc>
-  </url><url>
-    <loc>/gcp/</loc>
+    <loc>/home/categories/</loc>
   </url><url>
     <loc>/home/</loc>
   </url><url>
-    <loc>/networking/my-insane-blog-pipeline/</loc>
+    <loc>/home/tags/ethernetdude/</loc>
   </url><url>
-    <loc>/networking/</loc>
+    <loc>/home/tags/gcp/</loc>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>/home/gcp/</loc>
+  </url><url>
+    <loc>/home/home/</loc>
+  </url><url>
+    <loc>/home/networking/my-insane-blog-pipeline/</loc>
+  </url><url>
+    <loc>/home/networking/</loc>
+  </url><url>
+    <loc>/home/tags/</loc>
   </url>
 </urlset>

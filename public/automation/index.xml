@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Automations on ethernetdude</title>
-    <link>/automation/</link>
+    <link>/home/automation/</link>
     <description>Recent content in Automations on ethernetdude</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="/automation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/home/automation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>/automation/all-about-automation/</link>
+      <link>/home/automation/all-about-automation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/automation/all-about-automation/</guid>
+      <guid>/home/automation/all-about-automation/</guid>
       <description>&lt;p&gt;In this I will show you all about automation.&lt;/p&gt;</description>
     </item>
   </channel>
