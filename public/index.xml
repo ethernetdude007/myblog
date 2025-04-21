@@ -9,37 +9,37 @@
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>/posts/please-work/</link>
+      <link>/please-work/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/posts/please-work/</guid>
+      <guid>/please-work/</guid>
       <description>&lt;p&gt;This is a sample to check if my auto posting thing is working or not.&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>/posts/this-is-a-new-test-file/</link>
+      <link>/this-is-a-new-test-file/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/posts/this-is-a-new-test-file/</guid>
+      <guid>/this-is-a-new-test-file/</guid>
       <description>&lt;p&gt;this is a new test file to see if obsidian is adding my files automatically or not&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>/posts/this-is-final-testing/</link>
+      <link>/this-is-final-testing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/posts/this-is-final-testing/</guid>
+      <guid>/this-is-final-testing/</guid>
       <description>&lt;p&gt;!&lt;img src=&#34;/images/Pasted%20image%2020250420161818.png&#34; alt=&#34;Image Description&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>About Me</title>
-      <link>/posts/aboutme/aboutme/</link>
+      <link>/aboutme/aboutme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/posts/aboutme/aboutme/</guid>
+      <guid>/aboutme/aboutme/</guid>
       <description>&lt;p&gt;Hi, I&amp;rsquo;m Ethernet Dude. I&amp;rsquo;m passionate about networking, automation, and cloud tech. Welcome to my corner of the internet.&lt;/p&gt;</description>
     </item>
     <item>
       <title>My insane blog post</title>
-      <link>/posts/my-insane-blog-pipeline/</link>
+      <link>/my-insane-blog-pipeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/posts/my-insane-blog-pipeline/</guid>
+      <guid>/my-insane-blog-pipeline/</guid>
       <description>&lt;p&gt;Obsidian&lt;/p&gt;&#xA;&lt;p&gt;This is my first blogpost and this is a great tool. I am a great person with great knowledge on nothing &amp;amp; This is just a sample document. I hope you like this information I am sharing with you.&lt;/p&gt;&#xA;&lt;p&gt;If you don&amp;rsquo;t like, it is not going to matter because I don&amp;rsquo;t care.&lt;/p&gt;&#xA;&lt;p&gt;kjsdfhbakjlsdbf&lt;/p&gt;&#xA;&lt;p&gt;sdfkjashdbfljkbasdf]&lt;/p&gt;&#xA;&lt;p&gt;jkasbdfjkasbdf&#xA;werouwoegyrtu&lt;/p&gt;&#xA;&lt;p&gt;jkjksdgbflkasdgfbl;\&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;vadlfjkghasdkljf;ghasdf&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;kjhgbsdfjkabsdfkljawsdf\&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;jkbdsflkjasbdflkasdf&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;asdfkjbasdf&#xA;sdf&#xA;df&#xA;df&#xA;df&#xA;df&#xA;df&#xA;df&#xA;df&#xA;dfg&#xA;df&#xA;df&#xA;d&#xA;fd&#xA;fd&#xA;f&#xA;d&#xA;fdjsbdfjkabsdfkbasdjlfhkbv&lt;/p&gt;</description>
     </item>
   </channel>
