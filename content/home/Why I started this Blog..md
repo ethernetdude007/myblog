@@ -521,7 +521,7 @@ create a file using the above code in the same Hugo folder and the file extentio
 
 So next time you update your obsidian notes or add a new note, all you need to do is run the script.
 
-
+![[Pasted image 20250421211854.png]]
 
 [^1]: This is your github username
 
