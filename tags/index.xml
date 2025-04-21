@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on ethernetdude</title>
-    <link>/tags/</link>
+    <link>/home/tags/</link>
     <description>Recent content in Tags on ethernetdude</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/home/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ethernetdude</title>
-      <link>/tags/ethernetdude/</link>
+      <link>/home/tags/ethernetdude/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/tags/ethernetdude/</guid>
+      <guid>/home/tags/ethernetdude/</guid>
       <description></description>
     </item>
     <item>
       <title>Gcp</title>
-      <link>/tags/gcp/</link>
+      <link>/home/tags/gcp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/tags/gcp/</guid>
+      <guid>/home/tags/gcp/</guid>
       <description></description>
     </item>
   </channel>
