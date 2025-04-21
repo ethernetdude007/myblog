@@ -2,13 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/posts/please-work/</loc>
+    <loc>/please-work/</loc>
   </url><url>
-    <loc>/posts/this-is-a-new-test-file/</loc>
+    <loc>/this-is-a-new-test-file/</loc>
   </url><url>
-    <loc>/posts/this-is-final-testing/</loc>
+    <loc>/this-is-final-testing/</loc>
   </url><url>
-    <loc>/posts/aboutme/aboutme/</loc>
+    <loc>/aboutme/aboutme/</loc>
+  </url><url>
+    <loc>/aboutme/</loc>
   </url><url>
     <loc>/categories/</loc>
   </url><url>
@@ -18,9 +20,7 @@
   </url><url>
     <loc>/tags/gcp/</loc>
   </url><url>
-    <loc>/posts/my-insane-blog-pipeline/</loc>
-  </url><url>
-    <loc>/posts/</loc>
+    <loc>/my-insane-blog-pipeline/</loc>
   </url><url>
     <loc>/tags/</loc>
   </url>
