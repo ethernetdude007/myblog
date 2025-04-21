@@ -2,23 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/automation/all-about-automation/</loc>
+    <loc>/blogposts/automation/all-about-automation/</loc>
   </url><url>
-    <loc>/gcp/this-is-the-page-where-we-talk-google-cloud/</loc>
+    <loc>/blogposts/gcp/this-is-the-page-where-we-talk-google-cloud/</loc>
   </url><url>
-    <loc>/home/this-is-final-testing/</loc>
+    <loc>/blogposts/home/this-is-final-testing/</loc>
   </url><url>
-    <loc>/home/this-is-just--test-file/</loc>
+    <loc>/blogposts/home/this-is-just--test-file/</loc>
   </url><url>
-    <loc>/networking/please-work/</loc>
+    <loc>/blogposts/networking/please-work/</loc>
   </url><url>
-    <loc>/networking/this-is-a-new-test-file/</loc>
+    <loc>/blogposts/networking/this-is-a-new-test-file/</loc>
   </url><url>
-    <loc>/aboutme/aboutme/</loc>
+    <loc>/this-is-sample-number-1/</loc>
   </url><url>
-    <loc>/aboutme/</loc>
+    <loc>/blogposts/aboutme/aboutme/</loc>
   </url><url>
-    <loc>/automation/</loc>
+    <loc>/blogposts/</loc>
   </url><url>
     <loc>/categories/</loc>
   </url><url>
@@ -28,13 +28,7 @@
   </url><url>
     <loc>/tags/gcp/</loc>
   </url><url>
-    <loc>/gcp/</loc>
-  </url><url>
-    <loc>/home/</loc>
-  </url><url>
-    <loc>/networking/my-insane-blog-pipeline/</loc>
-  </url><url>
-    <loc>/networking/</loc>
+    <loc>/blogposts/networking/my-insane-blog-pipeline/</loc>
   </url><url>
     <loc>/tags/</loc>
   </url>
