@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/automation/all-about-automation/</loc>
+  </url><url>
+    <loc>/google-cloud/this-is-the-page-where-we-talk-google-cloud/</loc>
+  </url><url>
     <loc>/home/this-is-final-testing/</loc>
   </url><url>
     <loc>/home/this-is-just--test-file/</loc>
@@ -14,6 +18,8 @@
   </url><url>
     <loc>/aboutme/</loc>
   </url><url>
+    <loc>/automation/</loc>
+  </url><url>
     <loc>/categories/</loc>
   </url><url>
     <loc>/</loc>
@@ -21,6 +27,8 @@
     <loc>/tags/ethernetdude/</loc>
   </url><url>
     <loc>/tags/gcp/</loc>
+  </url><url>
+    <loc>/google-cloud/</loc>
   </url><url>
     <loc>/home/</loc>
   </url><url>

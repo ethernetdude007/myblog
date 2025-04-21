@@ -1,0 +1,1 @@
+We are going to talk about google cloud here.
