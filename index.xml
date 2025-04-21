@@ -50,6 +50,13 @@
       <description>&lt;p&gt;this is a new test file to see if obsidian is adding my files automatically or not&lt;/p&gt;</description>
     </item>
     <item>
+      <title></title>
+      <link>/this-is-sample-number-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/this-is-sample-number-1/</guid>
+      <description>&lt;p&gt;This is sample Number 1&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>About Me</title>
       <link>/aboutme/aboutme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
