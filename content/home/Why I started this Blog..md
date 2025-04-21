@@ -10,3 +10,14 @@ However, I was not posting any content for sometime. I felt opening the editor o
 
 1. Anyone else who would like something similar can follow along and set this up easily
 2. Another reason, that I won't forget it easily once I write down. Also, I can come here anytime here & read too.
+
+Now, Lets talk about how we are going to do that. here are the list of things you will need.
+
+1. **Obsidian** : Obsidian is a note taking tool just like notepad or notepad++ but it is much better than those.
+2. **Hugo**: Hugo is a tool that kind of acts like a webserver, but it converts the text files we have into HTML. 
+3. **GIT**: Then, we take our website & push it to GitHub.
+4. **Webhosting** : We are going to create Webhook to push the code automatically to the hosting provider. In this case, i am using Hostinger as web hosing provider, technically, you can use any other provider. 
+
+First, download [Obsidian ](https://obsidian.md/download)from here. It is available for both Windows, Mac & Linux
+
+
