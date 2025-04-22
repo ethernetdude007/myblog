@@ -57,6 +57,7 @@ for root, dirs, files in os.walk(posts_dir):
                     else:
                         print(f"🟡 Image already exists: {image}")
                 else:
+                    # Report if the image doesn't exist
                     print(f"❌ Missing image: {image_source}")
 
             # Write the modified content back to the destination folder
