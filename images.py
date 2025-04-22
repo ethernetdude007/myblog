@@ -3,22 +3,30 @@ import re
 import shutil
 
 # Paths
-posts_dir = r"D:\ethernetdude\Posts\blogposts"
-attachments_dir = r"D:\ethernetdude\Posts\blogposts\attachments"
+source_posts_dir = r"D:\ethernetdude\Posts\blogposts"
+destination_posts_dir = r"C:\Users\kapil\Documents\ethernetdude\content"
+attachments_dir = os.path.join(source_posts_dir, "attachments")
 static_images_dir = r"C:\Users\kapil\Documents\ethernetdude\static\images"
 
-# Make sure static image dir exists
+# Make sure output directories exist
 os.makedirs(static_images_dir, exist_ok=True)
+os.makedirs(destination_posts_dir, exist_ok=True)
 
-# Go through every .md file in subdirectories
-for root, dirs, files in os.walk(posts_dir):
+# Copy all markdown files and rewrite links
+for root, dirs, files in os.walk(source_posts_dir):
     for filename in files:
         if filename.endswith(".md"):
-            filepath = os.path.join(root, filename)  # ✅ define filepath inside the loop
+            rel_path = os.path.relpath(root, source_posts_dir)
+            target_dir = os.path.join(destination_posts_dir, rel_path)
+            os.makedirs(target_dir, exist_ok=True)
 
-            with open(filepath, "r", encoding="utf-8") as file:
+            source_filepath = os.path.join(root, filename)
+            target_filepath = os.path.join(target_dir, filename)
+
+            with open(source_filepath, "r", encoding="utf-8") as file:
                 content = file.read()
 
+            # Replace Obsidian-style image links with Markdown for Hugo
             images = re.findall(r'\[\[([^]]*\.(?:png|jpg|jpeg|webp))\]\]', content, re.IGNORECASE)
 
             for image in images:
@@ -37,7 +45,8 @@ for root, dirs, files in os.walk(posts_dir):
                 else:
                     print(f"⚠️ Missing: {image_source}")
 
-            with open(filepath, "w", encoding="utf-8") as file:
+            # Save modified file to Hugo content folder
+            with open(target_filepath, "w", encoding="utf-8") as file:
                 file.write(content)
 
-print("✅ All markdown files processed.")
+print("✅ Markdown files copied and processed for Hugo.")

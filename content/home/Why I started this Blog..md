@@ -21,19 +21,19 @@ Now, Lets talk about how we are going to do that. here are the list of things yo
 First, download [Obsidian](https://obsidian.md/download)from here. It is available for both Windows, Mac & Linux
 
 In Obsidian, we will create a new folder named "blogposts". You can name is anything you want, You will have to reference this folder path later. it is important to note that anything under this folder or its subfolders will get pushed to the site. Here, If there is some stuff I don't wish to post to the site. That goes into the other folder.
-![[Pasted image 20250421151952.png]]
+!![Image Description](Pasted%20image%2020250421151952.png)
 Once you have Obsidian installed, you would need to install Hugo. but before you install Hugo, there are few pre-requisites, you need to install [GIT](https://github.com/git-guides/install-git) (Code Repository) &[ GO programming language](https://go.dev/dl/). Both are available on all platforms & can be installed easily by following the instructions in the link. Once you install you can check in the PowerShell/Terminal the currently installed version & you should see something like below.
-![[Pasted image 20250421153446.png]]
+!![Image Description](Pasted%20image%2020250421153446.png)
 
 
 You can now install [Hugo](https://gohugo.io/installation/). Just follow the instructions provided in the link & you should be good. On Mac you can install it using brew, on windows, which is the current platform I am in, download the hugo.exe file, place it in your "C" drive & update your environment variables to add the path of Hugo folder you just created.
 
-![[Pasted image 20250421153948.png]]
+!![Image Description](Pasted%20image%2020250421153948.png)
 
 Once you do the above. You should be able to validate that Hugo is successfully installed by using `hugo version` in PowerShell.
 
 Now, In PowerShell or Terminal, Navigate to folder where you want to store your website files & give the command  `hugo new site <sitename>` in my case, the site name is ethernetdude. That will create a folder with the site name. let us check what's inside the folder.
-![[Pasted image 20250421154643.png]]
+!![Image Description](Pasted%20image%2020250421154643.png)
 
 Now, let us setup GIT's local empty repository. these needs to entered from Hugo home directory.
 This is going to tell GitHub who is making those changes to the blog.
@@ -54,14 +54,14 @@ git submodule add -f https://github.com/panr/hugo-theme-terminal.git themes/term
 
 Now, we need to make sure that, the configuration file matches our theme. the configuration file I am talking about here is ==hugo.toml==. The Terminal theme has a base configuration file that you can use. copy the entire thing from the theme website  & using notepad or vi editor open hugo.toml site & paste it. You can add some small modifications as well according your preferences.
 
-![[Pasted image 20250421171355.png]]
+!![Image Description](Pasted%20image%2020250421171355.png)
 
 Once done, you can check how the site runs locally. Now you can check the site theme using the localhost:1313 option. but it doesn't have any content yet.
 `hugo server -t terminal`
 
 So, We have Obsidian, where we have our files on blogposts & inside Hugo we have a folder called ethernetdude which has content & inside which we have to create other folders. for the sake of my site, I am going to create folders listed below. but the default is called posts. if you don't want multiple folders, just make a folder called posts.
 
-![[Pasted image 20250421172828.png]]
+!![Image Description](Pasted%20image%2020250421172828.png)
 
 Now, We have to find a way to sync the contents of our Obsidian folder to our Hugo folder.
 In my case, I have sync `D:\ethernetdude\Posts\blogposts` to `C:\Users\kapil\Documents\ethernetdude\content>`. We can use robocopy on windows or rsync on mac to achieve this.
@@ -77,7 +77,7 @@ Once you successfully run your robocopy, you should can now run the Hugo server 
 However, you will notice, that the images in your obsidian document are not reflecting correctly in your webpage. The reason for this is Obsidian will save your images in a different folder. So to fix this issue using the python script.
 
 First, figure out the path to where Obsidian is saving those images. it can been seen in the below screenshot. In my case, I am saving the attachments in a folder called attachments under the blogpost folder.
-![[Pasted image 20250421151906.png]]
+!![Image Description](Pasted%20image%2020250421151906.png)
 
 Now navigate to the Hugo Directory, under the Hugo folder, navigate to the static folder & create a directory called images in it.
 
@@ -233,11 +233,11 @@ So, at this point, you have obsidian, pushing the code to Hugo and the website i
 
 Login to GitHub & click new & create a new repository. You can name it whatever you want, I am just calling mine as "myblog". You can choose to make your repository either public or private. I will just leave mine to public. 
 
-![[Pasted image 20250421183414.png]]
+!![Image Description](Pasted%20image%2020250421183414.png)
 
 Now, our GitHub is setup, Now our goal is to take all the code in our Hugo folder & push that to the GitHub repository. to do that we need to authenticate, for that we will use an SSH Key. You will usually find your SSH key in the directory `cd ~/.ssh`. In my case, I already have a SSH key present. The .pub is the public key we will upload this to GitHub.
 
-![[Pasted image 20250421185831.png]]
+!![Image Description](Pasted%20image%2020250421185831.png)
 If you don't have a SSH Key, you can generate it using the below command.
 
 `ssh-keygen -t rsa -b 4096 -C "Your Email Address"`
@@ -246,7 +246,7 @@ Now, using the cat command, take a look at the contents of the key & copy them. 
 
 Now, to make sure you can authenticate by using the command `ssh -t git@github.com`. if successful, you will get a message like this.
 
-![[Pasted image 20250421191835.png]]
+!![Image Description](Pasted%20image%2020250421191835.png)
 
 Now, we need to add the remote GitHub repository & this can be done using the below commands
 ```
@@ -259,7 +259,7 @@ git push -u origin1 master
 
 Now, if you go to GitHub & check the repository, you will all the files in Hugo directory pushed to it.
 
-![[Pasted image 20250421193523.png]]
+!![Image Description](Pasted%20image%2020250421193523.png)
 
 Now, there is one last thing, we need to do. We are going to Host our website on Hostinger & Hostinger does not need all the files, it only cares about the public folder.
 
@@ -273,24 +273,24 @@ git branch -D hostinger-deploy
 
 Once this is applied, we should see a new branch appear in our GitHub repository.
 
-![[Pasted image 20250421194241.png]]
+!![Image Description](Pasted%20image%2020250421194241.png)
 
 Now, GitHub is done, we need to finally push our code to Hostinger. Login to Hostinger & click on add a new website. We are going to create an Empty site.
 
-![[Pasted image 20250421200349.png]]
+!![Image Description](Pasted%20image%2020250421200349.png)
 
 Once an Empty site is create, go to Advanced --> GIT & generate an SSH key.
 
-![[Pasted image 20250421201338.png]]
+!![Image Description](Pasted%20image%2020250421201338.png)
 
 Copy the generated SSH Key & paste it in GitHub under settings --> SSH & GPG Keys and add new key just like we did in the previous step.
 update hostinger the repository name & the branch to the "hostinger" branch we created earlier. Now, we don't want to come here & deploy the site every time we post something. we are going to do an auto deployment process. for that click on the Auto deploy option.
 
-![[Pasted image 20250421204756.png]]
+!![Image Description](Pasted%20image%2020250421204756.png)
 
 Copy the webhook url from there & click on the link which says setup webhook on GitHub.
 
-![[Pasted image 20250421205029.png]]
+!![Image Description](Pasted%20image%2020250421205029.png)
 
 Paste the Webhook URL you copied on the Payload URL tab & click on Add Webhook.
 
@@ -585,16 +585,6 @@ create a file using the above code in the same Hugo folder and the file extentio
 
 So next time you update your obsidian notes or add a new note, all you need to do is run the script.
 
-![[Pasted image 20250421211854.png]]
+!![Image Description](Pasted%20image%2020250421211854.png)
 
-[^1]: This is your github username
 
-[^2]: This is your repository name
-
-[^3]: This will convert the Markdown files we have & convert them to HTML. 
-
-[^4]: This will add all the files in our current directory to Git Repo
-
-[^5]: This will commit our changes to our local git hub repository
-
-[^6]: This will push the changes to remote repository, the origin1 is the name of my remote repo. You can change it to whatever you want.
