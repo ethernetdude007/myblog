@@ -45,6 +45,9 @@ for root, dirs, files in os.walk(posts_dir):
                 image_source = attachments_dir / image
                 image_target = static_images_dir / image
 
+                # Print out the image being processed for better debugging
+                print(f"Processing image: {image}")
+
                 # Check if the image exists in the attachments folder
                 if image_source.exists():
                     # Copy the image to the static/images folder if it doesn't already exist there
