@@ -92,63 +92,81 @@ import re
 
 import shutil
 
-  
-
-# Paths
-
-source_posts_dir = r"D:\ethernetdude\Posts\blogposts"
-
-destination_posts_dir = r"C:\Users\kapil\Documents\ethernetdude\content"
-
-attachments_dir = os.path.join(source_posts_dir, "attachments")
-
-static_images_dir = r"C:\Users\kapil\Documents\ethernetdude\static\images"
+from pathlib import Path
 
   
 
-# Make sure output directories exist
+# === CONFIGURATION ===
 
-os.makedirs(static_images_dir, exist_ok=True)
+# Paths to your Obsidian posts and attachments
 
-os.makedirs(destination_posts_dir, exist_ok=True)
+posts_dir = Path("D:/ethernetdude/Posts/blogposts")  # Obsidian vault
+
+attachments_dir = posts_dir / "attachments"  # Folder containing images
 
   
 
-# Copy all markdown files and rewrite links
+# Paths for your Hugo site
 
-for root, dirs, files in os.walk(source_posts_dir):
+hugo_content_dir = Path("C:/Users/kapil/Documents/ethernetdude/content")  # Hugo content folder
+
+static_images_dir = Path("C:/Users/kapil/Documents/ethernetdude/static/images")  # Hugo static images folder
+
+  
+
+# Create directories if they don't exist
+
+hugo_content_dir.mkdir(parents=True, exist_ok=True)
+
+static_images_dir.mkdir(parents=True, exist_ok=True)
+
+  
+
+# === MAIN PROCESSING ===
+
+for root, dirs, files in os.walk(posts_dir):
 
     for filename in files:
 
         if filename.endswith(".md"):
 
-            rel_path = os.path.relpath(root, source_posts_dir)
-
-            target_dir = os.path.join(destination_posts_dir, rel_path)
-
-            os.makedirs(target_dir, exist_ok=True)
+            original_path = Path(root) / filename
 
   
 
-            source_filepath = os.path.join(root, filename)
+            # Compute the relative path for the destination folder
 
-            target_filepath = os.path.join(target_dir, filename)
+            relative_path = original_path.relative_to(posts_dir)
 
-  
-
-            with open(source_filepath, "r", encoding="utf-8") as file:
-
-                content = file.read()
+            destination_path = hugo_content_dir / relative_path
 
   
 
-            # Replace Obsidian-style image links with Markdown for Hugo
+            # Ensure the subdirectory exists in the destination
 
-            images = re.findall(r'\[\[([^]]*\.(?:png|jpg|jpeg|webp))\]\]', content, re.IGNORECASE)
+            destination_path.parent.mkdir(parents=True, exist_ok=True)
 
   
+
+            # Read the content of the .md file
+
+            with original_path.open("r", encoding="utf-8") as f:
+
+                content = f.read()
+
+  
+
+            # Find all images in the Obsidian format ![Image Description](/images/image.png)
+
+            images = re.findall(r'\[\[([^]]*\.(?:png|jpg|jpeg|webp|gif|bmp|svg))\]\]', content, re.IGNORECASE)
+
+  
+
+            # Process each image
 
             for image in images:
+
+                # Convert the Obsidian image link format to Hugo format
 
                 markdown_image = f"![Image Description](/images/{image.replace(' ', '%20')})"
 
@@ -156,39 +174,51 @@ for root, dirs, files in os.walk(source_posts_dir):
 
   
 
-                image_source = os.path.join(attachments_dir, image)
+                image_source = attachments_dir / image
 
-                image_target = os.path.join(static_images_dir, image)
+                image_target = static_images_dir / image
 
   
 
-                if os.path.exists(image_source):
+                # Print out the image being processed for better debugging
 
-                    if not os.path.exists(image_target):
+                print(f"Processing image: {image}")
+
+  
+
+                # Check if the image exists in the attachments folder
+
+                if image_source.exists():
+
+                    # Copy the image to the static/images folder if it doesn't already exist there
+
+                    if not image_target.exists():
 
                         shutil.copy(image_source, image_target)
 
-                        print(f"Copied: {image}")
+                        print(f"✅ Copied image: {image}")
 
                     else:
 
-                        print(f"Already exists: {image}")
+                        print(f"🟡 Image already exists: {image}")
 
                 else:
 
-                    print(f"⚠️ Missing: {image_source}")
+                    # Report if the image doesn't exist
+
+                    print(f"❌ Missing image: {image_source}")
 
   
 
-            # Save modified file to Hugo content folder
+            # Write the modified content back to the destination folder
 
-            with open(target_filepath, "w", encoding="utf-8") as file:
+            with destination_path.open("w", encoding="utf-8") as f:
 
-                file.write(content)
+                f.write(content)
 
   
 
-print("✅ Markdown files copied and processed for Hugo.")
+print("✅ All Markdown files processed and images copied.")
 ```
 
 
@@ -198,57 +228,85 @@ print("✅ Markdown files copied and processed for Hugo.")
 import os
 import re
 import shutil
+from pathlib import Path
 
-# Paths - Update these for your setup
-posts_dir = "/Users/yourname/ethernetdude/Posts/blogposts"
-attachments_dir = os.path.join(posts_dir, "attachments")
-static_images_dir = "/Users/yourname/ethernetdude/static/images"
-hugo_content_dir = "/Users/yourname/ethernetdude/content"
+# === CONFIGURATION ===
+# Obsidian vault location
+posts_dir = Path("/Users/kapil/ethernetdude/Posts/blogposts")  # Change this path on your Mac
+attachments_dir = posts_dir / "attachments"
 
-# Make sure output dirs exist
-os.makedirs(static_images_dir, exist_ok=True)
-os.makedirs(hugo_content_dir, exist_ok=True)
+# Hugo site location
+hugo_content_dir = Path("/Users/kapil/Documents/ethernetdude/content")
+static_images_dir = Path("/Users/kapil/Documents/ethernetdude/static/images")
 
-# Walk through every markdown file in posts_dir
+# Create output directories if they don't exist
+hugo_content_dir.mkdir(parents=True, exist_ok=True)
+static_images_dir.mkdir(parents=True, exist_ok=True)
+
+# Track missing images for reporting
+missing_images = []
+
+# Display available images
+print("🗂️ Attachments folder contains:")
+for f in os.listdir(attachments_dir):
+    print(" -", f)
+
+# === PROCESS MARKDOWN FILES ===
 for root, dirs, files in os.walk(posts_dir):
     for filename in files:
         if filename.endswith(".md"):
-            source_path = os.path.join(root, filename)
+            original_path = Path(root) / filename
+            relative_path = original_path.relative_to(posts_dir)
+            destination_path = hugo_content_dir / relative_path
 
-            with open(source_path, "r", encoding="utf-8") as f:
+            # Ensure subfolders exist at destination
+            destination_path.parent.mkdir(parents=True, exist_ok=True)
+
+            with original_path.open("r", encoding="utf-8") as f:
                 content = f.read()
 
-            # Find Obsidian-style image links: !![Image Description](/images/image.png)
-            images = re.findall(r'\[\[([^]]*\.(?:png|jpg|jpeg|webp))\]\]', content, re.IGNORECASE)
+            # Find image links like ![Image Description](/images/image.png)
+            images = re.findall(r'\[\[([^]]*\.(?:png|jpg|jpeg|webp|gif|bmp|svg))\]\]', content, re.IGNORECASE)
 
             for image in images:
-                # Replace with Hugo-style Markdown image link
+                print(f"🔍 Processing image: {image} in file {original_path.name}")
                 markdown_image = f"![Image Description](/images/{image.replace(' ', '%20')})"
                 content = content.replace(f"[[{image}]]", markdown_image)
 
-                # Copy image from attachments to static/images
-                src_image_path = os.path.join(attachments_dir, image)
-                dst_image_path = os.path.join(static_images_dir, image)
+                image_target = static_images_dir / image
 
-                if os.path.exists(src_image_path):
-                    if not os.path.exists(dst_image_path):
-                        shutil.copy2(src_image_path, dst_image_path)
+                # Case-insensitive search in attachments folder
+                image_found = False
+                for file in os.listdir(attachments_dir):
+                    print(f"  Comparing with: {file}")
+                    if file.lower() == image.lower():
+                        image_source = attachments_dir / file
+                        image_found = True
+                        break
+
+                if image_found:
+                    if not image_target.exists():
+                        shutil.copy(image_source, image_target)
                         print(f"✅ Copied image: {image}")
                     else:
-                        print(f"🟡 Image already exists: {image}")
+                        print(f"🟡 Already exists: {image}")
                 else:
-                    print(f"⚠️ Missing image: {src_image_path}")
+                    missing_images.append(f"{image} (in file: {original_path})")
+                    print(f"❌ Missing image: {image} (referenced in {original_path})")
 
-            # Save processed markdown file to Hugo content folder
-            rel_path = os.path.relpath(source_path, posts_dir)
-            dest_path = os.path.join(hugo_content_dir, rel_path)
-            os.makedirs(os.path.dirname(dest_path), exist_ok=True)
-
-            with open(dest_path, "w", encoding="utf-8") as f:
+            # Save modified Markdown
+            with destination_path.open("w", encoding="utf-8") as f:
                 f.write(content)
-            print(f"✅ Converted Markdown: {rel_path}")
 
-print("🎉 All markdown files processed and copied.")
+# === SUMMARY ===
+if missing_images:
+    print("\n🚨 Missing image references:")
+    for entry in missing_images:
+        print(f"  - {entry}")
+else:
+    print("\n✅ All images found and Markdown files processed.")
+
+print("\n🎉 Done.")
 
 
 ```
