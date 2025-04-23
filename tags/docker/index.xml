@@ -1,25 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ethernetdude on ethernetdude</title>
-    <link>/tags/ethernetdude/</link>
-    <description>Recent content in Ethernetdude on ethernetdude</description>
+    <title>Docker on ethernetdude</title>
+    <link>/tags/docker/</link>
+    <description>Recent content in Docker on ethernetdude</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="/tags/ethernetdude/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What is the need for Docker &amp; How they are different from Virtual Machines</title>
       <link>/docker/why-docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/docker/why-docker/</guid>
       <description>&lt;p&gt;Docker lets us run each component in a separate container with its own dependencies &amp;amp; libraries. This let&amp;rsquo;s us run the application irrespective of the operating system we are using.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;What are Containers ?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Containers are isolated environments, which can have their own processes, network &amp;amp; mounts just like virtual machines except that they all share the same OS kernel.&lt;/p&gt;&#xA;&lt;p&gt;If you look at operating systems like Ubuntu, Fedora, Centos etc.. They all contain a OS Kernel &amp;amp; Software. The OS kernel is responsible for interacting with the Hardware &amp;amp; Software consists of things like drivers, user interface , etc.. So all these operating systems have the same linux Kernel.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Why &amp; How I started this Blog</title>
-      <link>/home/why-i-started-this-blog/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/home/why-i-started-this-blog/</guid>
-      <description>&lt;p&gt;I always felt that there should be a place for me to post stuff which can be systematically accessed from anywhere.  I read a lot of things and  sometimes, I find them interesting &amp;amp; would like to remember them or make a note of some stuff. I used to make notes in word or some other editor, but I felt, I also need to share this information with a community which I care about. Someone might find this information useful. Initially I started a blog using content management system like WordPress which was very good, I mean, there are multiple plugins, very sophisticated indeed.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
