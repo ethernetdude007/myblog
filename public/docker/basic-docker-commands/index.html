@@ -2,16 +2,18 @@
 <html lang="en">
 <head>
   
-    <title>Homes :: ethernetdude</title>
+    <title>Basic Docker Commands :: ethernetdude</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="" />
+<meta name="description" content="docker run : The docker run command is used to create a container from an image. for example, docker run ngnix command will create an instance from the image. if the image is not present on the host, it will try to get a copy of image from docker hub if it is available there.
+You can also run docker run command in detach mode by using the option &ldquo;-d&rdquo;. This will simply run the container in background while you can continue to perform your other tasks.
+" />
 <meta name="keywords" content="" />
 
   <meta name="robots" content="noodp" />
 
-<link rel="canonical" href="/home/" />
+<link rel="canonical" href="/docker/basic-docker-commands/" />
 
 
 
@@ -71,10 +73,12 @@
 
 
 <meta property="og:locale" content="en" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Homes">
-<meta property="og:description" content="" />
-<meta property="og:url" content="/home/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Basic Docker Commands">
+<meta property="og:description" content="docker run : The docker run command is used to create a container from an image. for example, docker run ngnix command will create an instance from the image. if the image is not present on the host, it will try to get a copy of image from docker hub if it is available there.
+You can also run docker run command in detach mode by using the option &ldquo;-d&rdquo;. This will simply run the container in background while you can continue to perform your other tasks.
+" />
+<meta property="og:url" content="/docker/basic-docker-commands/" />
 <meta property="og:site_name" content="ethernetdude" />
 
   <meta property="og:image" content="/og-image.png">
@@ -85,8 +89,6 @@
 
 
 
-
-  <link href="/home/index.xml" rel="alternate" type="application/rss+xml" title="ethernetdude" />
 
 
 
@@ -201,51 +203,44 @@
 
   <div class="content">
     
+<article class="post">
+  <h1 class="post-title">
+    <a href="/docker/basic-docker-commands/">Basic Docker Commands</a>
+  </h1>
+  <div class="post-meta"></div>
+
   
-  <div class="posts">
-    
-      <article class="post on-list">
-        <h2 class="post-title">
-          <a href="/home/why-i-started-this-blog/">Why &amp; How I started this Blog</a>
-        </h2>
-        <div class="post-meta"></div>
-
-        
-          <span class="post-tags">
-            
-            #<a href="/tags/blogpost/">Blogpost</a>&nbsp;
-            
-            #<a href="/tags/ethernetdude/">ethernetdude</a>&nbsp;
-            
-          </span>
-        
-
-        
+  
 
 
-        <div class="post-content">
-          
-            <p>I always felt that there should be a place for me to post stuff which can be systematically accessed from anywhere.  I read a lot of things and  sometimes, I find them interesting &amp; would like to remember them or make a note of some stuff. I used to make notes in word or some other editor, but I felt, I also need to share this information with a community which I care about. Someone might find this information useful. Initially I started a blog using content management system like WordPress which was very good, I mean, there are multiple plugins, very sophisticated indeed.</p>
-          
-        </div>
+  
 
-        
-           <div>
-            <a class="read-more button inline" href="/home/why-i-started-this-blog/">[Read more]</a>
-          </div>
-        
-      </article>
+  <div class="post-content"><div>
+        <p><strong>docker run :</strong> The docker run command is used to create a container from an image. for example, docker run ngnix command will create an instance from the image. if the image is not present on the host, it will try to get a copy of image from docker hub if it is available there.</p>
+<p>You can also run docker run command in detach mode by using the option &ldquo;-d&rdquo;. This will simply run the container in background while you can continue to perform your other tasks.</p>
+<p>If you would like to attach to the docker container  later, you can use the command docker attach <!-- raw HTML omitted --></p>
+<p><strong>docker ps:</strong> The docker ps commands lists all running containers &amp; some basic information about them. using the docker ps with -a option will show all previously stopped &amp; exited containers</p>
+<p><strong>docker stop:</strong>  The docker stop <!-- raw HTML omitted --> will stop the container, the container ID needs to be provided as argument.</p>
+<p><strong>docker rm :</strong> The remove a container permanently, we can use the docker rm <!-- raw HTML omitted --> command.</p>
+<p><strong>docker images :</strong> we can use the docker images command to list the docker images on our host.</p>
+<p><strong>docker rmi</strong>  We can use the docker rmi <!-- raw HTML omitted --> command to remove an image from the system. it has to be noted that no containers should be running based out of this image.</p>
+<p><strong>docker pull:</strong>  the docker pull <!-- raw HTML omitted --> will only download the image from docker hub but will not create a container out of it.</p>
+<p>Let&rsquo;s say, we were to create a docker container for the ubuntu image with the docker run ubuntu command. It will run the instance of ubuntu &amp; exists immediately. The reason for this is because containers are not meant to host operating systems. Containers are meant to run a specific task such as to host an instance of web server, or an instance of database or simply to carry some kind of computational or analysis task. Once the task is complete, the container will exit.</p>
+<p>Ubuntu operating system once starts does not run any service. Hence it will exit. We can pass or append additional commands such as below</p>
+<pre tabindex="0"><code>docker run ubuntu sleep 5 
+</code></pre><p>If you want to execute a command on a running container, this is the format:</p>
+<p>docker exec <!-- raw HTML omitted --> <!-- raw HTML omitted -->
+Example : docker exec <!-- raw HTML omitted --> cat /etc/hosts</p>
+
+      </div></div>
+
+  
+
+  
     
 
-    <div class="pagination">
-  <div class="pagination__buttons">
-    
-    
-    
-  </div>
-</div>
-
-  </div>
+  
+</article>
 
   </div>
 

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>What is the need for Docker &amp; How they are different from Virtual Machines :: ethernetdude</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Docker lets us run each component in a separate container with its own dependencies &amp; libraries. This let&rsquo;s us run the application irrespective of the operating system we are using.
+What are Containers ?
+Containers are isolated environments, which can have their own processes, network &amp; mounts just like virtual machines except that they all share the same OS kernel.
+If you look at operating systems like Ubuntu, Fedora, Centos etc.. They all contain a OS Kernel &amp; Software. The OS kernel is responsible for interacting with the Hardware &amp; Software consists of things like drivers, user interface , etc.. So all these operating systems have the same linux Kernel.
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="/docker/why-docker/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="/css/code.min.4f0ccc8439f99bf7f7970298556b94011aabc1fcae743b6842fc3361a2da9ea3.css">
+
+  
+  <link rel="stylesheet" href="/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="What is the need for Docker &amp; How they are different from Virtual Machines">
+<meta property="og:description" content="Docker lets us run each component in a separate container with its own dependencies &amp; libraries. This let&rsquo;s us run the application irrespective of the operating system we are using.
+What are Containers ?
+Containers are isolated environments, which can have their own processes, network &amp; mounts just like virtual machines except that they all share the same OS kernel.
+If you look at operating systems like Ubuntu, Fedora, Centos etc.. They all contain a OS Kernel &amp; Software. The OS kernel is responsible for interacting with the Hardware &amp; Software consists of things like drivers, user interface , etc.. So all these operating systems have the same linux Kernel.
+" />
+<meta property="og:url" content="/docker/why-docker/" />
+<meta property="og:site_name" content="ethernetdude" />
+
+  <meta property="og:image" content="/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container full">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    ethernetdude
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/home">Home</a></li>
+        
+      
+        
+          <li><a href="/aboutme/">About Me</a></li>
+        
+      
+        
+          <li><a href="/docker/"> Docker</a></li>
+        
+      
+        
+          <li><a href="/automation/">Automation</a></li>
+        
+      
+        
+          <li><a href="/gcp/">Google Cloud</a></li>
+        
+      
+        
+          <li><a href="/networking/">Networking</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/home" >Home</a></li>
+        
+      
+        
+          <li><a href="/aboutme/" >About Me</a></li>
+        
+      
+      
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">Contents&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                
+                  
+                    <li><a href="/docker/" > Docker</a></li>
+                  
+                
+                  
+                    <li><a href="/automation/" >Automation</a></li>
+                  
+                
+                  
+                    <li><a href="/gcp/" >Google Cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/networking/" >Networking</a></li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="/docker/why-docker/">What is the need for Docker &amp; How they are different from Virtual Machines</a>
+  </h1>
+  <div class="post-meta"></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="/tags/docker/">Docker</a>&nbsp;
+      
+      #<a href="/tags/ethernetdude/">ethernetdude</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>Docker lets us run each component in a separate container with its own dependencies &amp; libraries. This let&rsquo;s us run the application irrespective of the operating system we are using.</p>
+<p><strong>What are Containers ?</strong></p>
+<p>Containers are isolated environments, which can have their own processes, network &amp; mounts just like virtual machines except that they all share the same OS kernel.</p>
+<p>If you look at operating systems like Ubuntu, Fedora, Centos etc.. They all contain a OS Kernel &amp; Software. The OS kernel is responsible for interacting with the Hardware &amp; Software consists of things like drivers, user interface , etc.. So all these operating systems have the same linux Kernel.</p>
+<p>Docker containers share the same common linux kernel. Meaning, Docker containers can run any operating system as long as they share the same kernel. It also means that a docker containers cannot run on windows if the containers themself are running a linux.</p>
+<p>!<img src="/images/Pasted%20image%2020250422221202.png" alt="Image Description">
+It also is note worthy, Docker containers are lite as the Kernel is shared &amp; each docker container only needs to have the additional software that makes these operating systems unique.</p>
+<p>The Only, reason why you see windows running docker is basically because docker is not directly installed on windows. The linux kernel runs on top of windows as a virtual Machine &amp; which in turn runs Docker.</p>
+<p><strong>Difference between Virtual Machine &amp; Containers :</strong></p>
+<p>This image shows the fundamental difference between Docker &amp; Virtual Machines.</p>
+<p>!<img src="/images/Pasted%20image%2020250422221928.png" alt="Image Description"></p>
+<ol>
+<li>Each Virtual machine has its own operating system.</li>
+<li>Virtual Machines are heavy, require more disk space, takes time to boot compared to Docker.</li>
+<li>Virtual machines have complete isolation from each other as they run different operating systems.</li>
+</ol>
+<p>Most organizations today have their applications in a containerized version. Many applications are available in a public repository called &ldquo;Docker Hub&rdquo;</p>
+<p>You can also create your own container Image if something that is available in public does not fit your need.</p>
+<p>If you need multiple instances of a image ( Instance in docker is referred as container ). You can easily scale it up &amp; scale-down when not required.</p>
+<p><strong>Key Takeways:</strong></p>
+<ol>
+<li>Docker runs on top of Linux Kernel &amp; doesn&rsquo;t require individual OS per each container like Virtual Machines.</li>
+<li>You create something called a Docker file with information in it &amp; then convert that into a Docker image &amp; then the image is deployed and a running instance is called as container.</li>
+</ol>
+<p><strong>How to Install Docker :</strong></p>
+<p>The way that you install depends on the operating system you are using. You can find out how to install by going to <a href="">docs.docker.com</a>. In my case, I have a ubuntu Virtual machine running on VmWare Workstation on which I am going to install Docker.</p>
+<p><strong>uninstall any older version of Docker by using the below command :</strong></p>
+<pre tabindex="0"><code>for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+</code></pre><p>Now, there are multiple ways to install Docker, You can install using the Package manager apt-get or else, there is a script that is given by docker to install everything.</p>
+<pre tabindex="0"><code>curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh ./get-docker.sh --dry-run
+</code></pre><pre tabindex="0"><code>curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+</code></pre><p>Once you do that, you can use the command <code>&quot;sudo docker version&quot;</code> to check if it got installed correctly.</p>
+<p>!<img src="/images/Pasted%20image%2020250423202519.png" alt="Image Description"></p>
+
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>::ethernetdude.com</span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

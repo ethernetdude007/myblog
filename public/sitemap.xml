@@ -2,9 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/docker/basic-docker-commands/</loc>
+  </url><url>
     <loc>/tags/blogpost/</loc>
   </url><url>
     <loc>/categories/</loc>
+  </url><url>
+    <loc>/tags/docker/</loc>
+  </url><url>
+    <loc>/docker/</loc>
   </url><url>
     <loc>/</loc>
   </url><url>
@@ -13,6 +19,8 @@
     <loc>/home/</loc>
   </url><url>
     <loc>/tags/</loc>
+  </url><url>
+    <loc>/docker/why-docker/</loc>
   </url><url>
     <loc>/home/why-i-started-this-blog/</loc>
   </url>

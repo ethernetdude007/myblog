@@ -122,3 +122,8 @@ pagination.pagerSize = 5
     name = "Automation"
     url = "/automation/"
     weight = 3
+
+  [[languages.en.menu.main]]
+    name = " Docker"
+    url = "/docker/"
+    weight = 3

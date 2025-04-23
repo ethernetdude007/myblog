@@ -8,6 +8,20 @@
     <language>en</language>
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Basic Docker Commands</title>
+      <link>/docker/basic-docker-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docker/basic-docker-commands/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;docker run :&lt;/strong&gt; The docker run command is used to create a container from an image. for example, docker run ngnix command will create an instance from the image. if the image is not present on the host, it will try to get a copy of image from docker hub if it is available there.&lt;/p&gt;&#xA;&lt;p&gt;You can also run docker run command in detach mode by using the option &amp;ldquo;-d&amp;rdquo;. This will simply run the container in background while you can continue to perform your other tasks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>What is the need for Docker &amp; How they are different from Virtual Machines</title>
+      <link>/docker/why-docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docker/why-docker/</guid>
+      <description>&lt;p&gt;Docker lets us run each component in a separate container with its own dependencies &amp;amp; libraries. This let&amp;rsquo;s us run the application irrespective of the operating system we are using.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;What are Containers ?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Containers are isolated environments, which can have their own processes, network &amp;amp; mounts just like virtual machines except that they all share the same OS kernel.&lt;/p&gt;&#xA;&lt;p&gt;If you look at operating systems like Ubuntu, Fedora, Centos etc.. They all contain a OS Kernel &amp;amp; Software. The OS kernel is responsible for interacting with the Hardware &amp;amp; Software consists of things like drivers, user interface , etc.. So all these operating systems have the same linux Kernel.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Why &amp; How I started this Blog</title>
       <link>/home/why-i-started-this-blog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
