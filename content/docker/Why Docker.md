@@ -1,10 +1,8 @@
 ---
 title: What is the need for Docker & How they are different from Virtual Machines
-date: DD-MM-YYYY
 tags:
   - Docker
   - ethernetdude
-
 ---
 Docker lets us run each component in a separate container with its own dependencies & libraries. This let's us run the application irrespective of the operating system we are using.
 

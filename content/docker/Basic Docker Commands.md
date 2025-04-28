@@ -1,5 +1,8 @@
 ---
 title: Basic Docker Commands
+tags:
+  - Docker
+  - ethernetdude
 ---
 **docker run :** The docker run command is used to create a container from an image. for example, docker run ngnix command will create an instance from the image. if the image is not present on the host, it will try to get a copy of image from docker hub if it is available there.
 

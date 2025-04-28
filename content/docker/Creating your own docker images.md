@@ -1,7 +1,8 @@
 ---
 title: Docker images
-date: DD-MM-YYYY
-tags: ethernetdude Docker
+tags:
+  - ethernetdude
+  - Docker
 ---
 in case, if you are developing an application & decide to run it as container or if you want to install something as a container that is not available on docker hub, then you would have to create your own docker image.
 

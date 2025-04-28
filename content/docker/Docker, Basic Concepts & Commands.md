@@ -1,6 +1,5 @@
 ---
 title: Basic Docker Concepts & Commands.
-date: DD-MM-YYYY
 tags:
   - Docker
   - ethernetdude
