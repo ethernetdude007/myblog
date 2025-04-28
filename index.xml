@@ -15,6 +15,20 @@
       <description>&lt;p&gt;&lt;strong&gt;docker run :&lt;/strong&gt; The docker run command is used to create a container from an image. for example, docker run ngnix command will create an instance from the image. if the image is not present on the host, it will try to get a copy of image from docker hub if it is available there.&lt;/p&gt;&#xA;&lt;p&gt;You can also run docker run command in detach mode by using the option &amp;ldquo;-d&amp;rdquo;. This will simply run the container in background while you can continue to perform your other tasks.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Basic Docker Concepts &amp; Commands.</title>
+      <link>/docker/docker-basic-concepts--commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docker/docker-basic-concepts--commands/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;docker run :&lt;/strong&gt; The docker run command is used to create a container from an image. for example, docker run ngnix command will create an instance from the image. if the image is not present on the host, it will try to get a copy of image from docker hub if it is available there.**&lt;/p&gt;&#xA;&lt;p&gt;You can also run docker run command in detach mode by using the option &amp;ldquo;-d&amp;rdquo;. This will simply run the container in background while you can continue to perform your other tasks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Docker images</title>
+      <link>/docker/creating-your-own-docker-images/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docker/creating-your-own-docker-images/</guid>
+      <description>&lt;p&gt;in case, if you are developing an application &amp;amp; decide to run it as container or if you want to install something as a container that is not available on docker hub, then you would have to create your own docker image.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;How to create your image ?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;First, create a file named &amp;ldquo;dockerfile&amp;rdquo; &amp;amp; write down the instructions such as where to copy the source code from, what is the entry point &amp;amp; where to install the application etc..&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>What is the need for Docker &amp; How they are different from Virtual Machines</title>
       <link>/docker/why-docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

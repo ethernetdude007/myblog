@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
   
-    <title>Basic Docker Commands :: ethernetdude</title>
+    <title>Docker images :: ethernetdude</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="docker run : The docker run command is used to create a container from an image. for example, docker run ngnix command will create an instance from the image. if the image is not present on the host, it will try to get a copy of image from docker hub if it is available there.
-You can also run docker run command in detach mode by using the option &ldquo;-d&rdquo;. This will simply run the container in background while you can continue to perform your other tasks.
+<meta name="description" content="in case, if you are developing an application &amp; decide to run it as container or if you want to install something as a container that is not available on docker hub, then you would have to create your own docker image.
+How to create your image ?
+First, create a file named &ldquo;dockerfile&rdquo; &amp; write down the instructions such as where to copy the source code from, what is the entry point &amp; where to install the application etc..
 " />
 <meta name="keywords" content="" />
 
   <meta name="robots" content="noodp" />
 
-<link rel="canonical" href="/docker/basic-docker-commands/" />
+<link rel="canonical" href="/docker/creating-your-own-docker-images/" />
 
 
 
@@ -74,11 +75,12 @@ You can also run docker run command in detach mode by using the option &ldquo;-d
 
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Basic Docker Commands">
-<meta property="og:description" content="docker run : The docker run command is used to create a container from an image. for example, docker run ngnix command will create an instance from the image. if the image is not present on the host, it will try to get a copy of image from docker hub if it is available there.
-You can also run docker run command in detach mode by using the option &ldquo;-d&rdquo;. This will simply run the container in background while you can continue to perform your other tasks.
+<meta property="og:title" content="Docker images">
+<meta property="og:description" content="in case, if you are developing an application &amp; decide to run it as container or if you want to install something as a container that is not available on docker hub, then you would have to create your own docker image.
+How to create your image ?
+First, create a file named &ldquo;dockerfile&rdquo; &amp; write down the instructions such as where to copy the source code from, what is the entry point &amp; where to install the application etc..
 " />
-<meta property="og:url" content="/docker/basic-docker-commands/" />
+<meta property="og:url" content="/docker/creating-your-own-docker-images/" />
 <meta property="og:site_name" content="ethernetdude" />
 
   <meta property="og:image" content="/og-image.png">
@@ -205,16 +207,16 @@ You can also run docker run command in detach mode by using the option &ldquo;-d
     
 <article class="post">
   <h1 class="post-title">
-    <a href="/docker/basic-docker-commands/">Basic Docker Commands</a>
+    <a href="/docker/creating-your-own-docker-images/">Docker images</a>
   </h1>
   <div class="post-meta"></div>
 
   
     <span class="post-tags">
       
-      #<a href="/tags/docker/">Docker</a>&nbsp;
-      
       #<a href="/tags/ethernetdude/">ethernetdude</a>&nbsp;
+      
+      #<a href="/tags/docker/">Docker</a>&nbsp;
       
     </span>
   
@@ -224,21 +226,48 @@ You can also run docker run command in detach mode by using the option &ldquo;-d
   
 
   <div class="post-content"><div>
-        <p><strong>docker run :</strong> The docker run command is used to create a container from an image. for example, docker run ngnix command will create an instance from the image. if the image is not present on the host, it will try to get a copy of image from docker hub if it is available there.</p>
-<p>You can also run docker run command in detach mode by using the option &ldquo;-d&rdquo;. This will simply run the container in background while you can continue to perform your other tasks.</p>
-<p>If you would like to attach to the docker container  later, you can use the command docker attach <!-- raw HTML omitted --></p>
-<p><strong>docker ps:</strong> The docker ps commands lists all running containers &amp; some basic information about them. using the docker ps with -a option will show all previously stopped &amp; exited containers</p>
-<p><strong>docker stop:</strong>  The docker stop <!-- raw HTML omitted --> will stop the container, the container ID needs to be provided as argument.</p>
-<p><strong>docker rm :</strong> The remove a container permanently, we can use the docker rm <!-- raw HTML omitted --> command.</p>
-<p><strong>docker images :</strong> we can use the docker images command to list the docker images on our host.</p>
-<p><strong>docker rmi</strong>  We can use the docker rmi <!-- raw HTML omitted --> command to remove an image from the system. it has to be noted that no containers should be running based out of this image.</p>
-<p><strong>docker pull:</strong>  the docker pull <!-- raw HTML omitted --> will only download the image from docker hub but will not create a container out of it.</p>
-<p>Let&rsquo;s say, we were to create a docker container for the ubuntu image with the docker run ubuntu command. It will run the instance of ubuntu &amp; exists immediately. The reason for this is because containers are not meant to host operating systems. Containers are meant to run a specific task such as to host an instance of web server, or an instance of database or simply to carry some kind of computational or analysis task. Once the task is complete, the container will exit.</p>
-<p>Ubuntu operating system once starts does not run any service. Hence it will exit. We can pass or append additional commands such as below</p>
-<pre tabindex="0"><code>docker run ubuntu sleep 5 
-</code></pre><p>If you want to execute a command on a running container, this is the format:</p>
-<p>docker exec <!-- raw HTML omitted --> <!-- raw HTML omitted -->
-Example : docker exec <!-- raw HTML omitted --> cat /etc/hosts</p>
+        <p>in case, if you are developing an application &amp; decide to run it as container or if you want to install something as a container that is not available on docker hub, then you would have to create your own docker image.</p>
+<p><strong>How to create your image ?</strong></p>
+<p>First, create a file named &ldquo;dockerfile&rdquo; &amp; write down the instructions such as where to copy the source code from, what is the entry point &amp; where to install the application etc..</p>
+<p>Here I am going to create a sample dockerfile</p>
+<p>On the left hand side commands are instructions, Things like FROM, RUN, COPY &amp; ENTRYPOINT are instructions &amp; the inputs on the right are instructions.</p>
+<pre tabindex="0"><code>FROM Ubuntu 
+
+%% All docker files start from a from instruction. They need a base image %%
+
+RUN apt-get update &amp;&amp; apt-get -y install python 
+
+%% This will install dependencies basically instructs docker to run a particular command on the base image. %%
+
+RUN pip install flask flask-mysql
+
+COPY . /opt/source-code
+
+%% This copies the source code to the docker image. %%
+
+ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run 
+
+%% This entrypoint allows us to specify a command that will be run when we run the image as container. %%``
+
+%% use the docker build command to create a docker image. -t species the tag name for image%%
+docker build . -f dockerfile -t kkapil/my-custom-app
+
+%% Use the docker push command to keep the image in docker hub %%
+
+docker push kkapil/my-custom-app
+</code></pre><p><strong>Note</strong>: You have to login first to docker hub using the <code>docker login</code> command to be able to push the image.</p>
+<p>Docker images are created in a Layered fashion. Each layer is built on top of the previous layer and is cached, so if you get an error in step 3, when you reattempt, step1 &amp; step2 such as building the base os are already cached and process starts from step 3.</p>
+<p><strong>Environment Variables:</strong> Environment variables are something that can change every time an instance of container running the application is created. While the environment variable itself is written into the application code. We can set them at the time of running the docker container by using the &ldquo;-e&rdquo; option with the docker run command.</p>
+<pre tabindex="0"><code>docker run -e {environment-variable}={value} {docker-image-name}
+</code></pre><p>We can find the environment variable on a container already running by using the docker inspect command.</p>
+<p><strong>Command &amp; Entry points:</strong></p>
+<p>As you are probably aware by now that a container only lives as long as the process inside it keeps running.</p>
+<p>When the container initially starts, It has to run a process, the CMD is used in the docker file to specify this.</p>
+<p>We can override the command run at the startup of container</p>
+<pre tabindex="0"><code>docker run {image-name } {command}
+</code></pre><p>Now, if you want to make this change permanent, then you should use the base image and create your own image with the CMD specified in the docker file.</p>
+<p><strong>Entry Point :</strong> The entry point instruction is like a command instruction to specify the program that you want to run at the start &amp; whatever you have specified in the CMD will get appended to the entry point.</p>
+<p>For example, in a docker file if you have the entry point as sleep &amp; the cmd as 5, then the command that would be run at startup of container is sleep 5.</p>
 
       </div></div>
 
