@@ -8,13 +8,6 @@
     <language>en</language>
     <atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Basic Docker Commands</title>
-      <link>/docker/basic-docker-commands/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/docker/basic-docker-commands/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;docker run :&lt;/strong&gt; The docker run command is used to create a container from an image. for example, docker run ngnix command will create an instance from the image. if the image is not present on the host, it will try to get a copy of image from docker hub if it is available there.&lt;/p&gt;&#xA;&lt;p&gt;You can also run docker run command in detach mode by using the option &amp;ldquo;-d&amp;rdquo;. This will simply run the container in background while you can continue to perform your other tasks.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Basic Docker Concepts &amp; Commands.</title>
       <link>/docker/docker-basic-concepts--commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
