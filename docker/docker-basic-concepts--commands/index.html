@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Basic Docker Concepts &amp; Commands. :: ethernetdude</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="docker run : The docker run command is used to create a container from an image. for example, docker run ngnix command will create an instance from the image. if the image is not present on the host, it will try to get a copy of image from docker hub if it is available there.**
+You can also run docker run command in detach mode by using the option &ldquo;-d&rdquo;. This will simply run the container in background while you can continue to perform your other tasks.
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="/docker/docker-basic-concepts--commands/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="/css/code.min.4f0ccc8439f99bf7f7970298556b94011aabc1fcae743b6842fc3361a2da9ea3.css">
+
+  
+  <link rel="stylesheet" href="/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Basic Docker Concepts &amp; Commands.">
+<meta property="og:description" content="docker run : The docker run command is used to create a container from an image. for example, docker run ngnix command will create an instance from the image. if the image is not present on the host, it will try to get a copy of image from docker hub if it is available there.**
+You can also run docker run command in detach mode by using the option &ldquo;-d&rdquo;. This will simply run the container in background while you can continue to perform your other tasks.
+" />
+<meta property="og:url" content="/docker/docker-basic-concepts--commands/" />
+<meta property="og:site_name" content="ethernetdude" />
+
+  <meta property="og:image" content="/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="0001-01-01 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container full">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    ethernetdude
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/home">Home</a></li>
+        
+      
+        
+          <li><a href="/aboutme/">About Me</a></li>
+        
+      
+        
+          <li><a href="/docker/"> Docker</a></li>
+        
+      
+        
+          <li><a href="/automation/">Automation</a></li>
+        
+      
+        
+          <li><a href="/gcp/">Google Cloud</a></li>
+        
+      
+        
+          <li><a href="/networking/">Networking</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/home" >Home</a></li>
+        
+      
+        
+          <li><a href="/aboutme/" >About Me</a></li>
+        
+      
+      
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">Contents&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                
+                  
+                    <li><a href="/docker/" > Docker</a></li>
+                  
+                
+                  
+                    <li><a href="/automation/" >Automation</a></li>
+                  
+                
+                  
+                    <li><a href="/gcp/" >Google Cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/networking/" >Networking</a></li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="/docker/docker-basic-concepts--commands/">Basic Docker Concepts &amp; Commands.</a>
+  </h1>
+  <div class="post-meta"></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="/tags/docker/">Docker</a>&nbsp;
+      
+      #<a href="/tags/ethernetdude/">ethernetdude</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p><strong>docker run :</strong> The docker run command is used to create a container from an image. for example, docker run ngnix command will create an instance from the image. if the image is not present on the host, it will try to get a copy of image from docker hub if it is available there.**</p>
+<p>You can also run docker run command in detach mode by using the option &ldquo;-d&rdquo;. This will simply run the container in background while you can continue to perform your other tasks.</p>
+<p>If you would like to attach to the docker container  later, you can use the command docker attach {container-id}</p>
+<p>if you want to name a container specifically, below is the command while running it.</p>
+<pre tabindex="0"><code>   docker run -d --name {Name} {Image-name}
+</code></pre><p>By default, docker run command will run the latest version of the image available in docker hub. if you would like to use a different version, then the tag needs to be specified.</p>
+<pre tabindex="0"><code>docker run {image-name}:{tag}
+Example : docker run redis :4.0
+</code></pre><p>Docker containers does not listen to a standard input, The docker containers run in a non-interactive mode &amp; it does have a terminal attached. So typically docker containers should be run with a -tf option to be interactive and terminal attached.</p>
+<p><strong>docker ps:</strong> The docker ps commands lists all running containers &amp; some basic information about them. using the docker ps with -a option will show all previously stopped &amp; exited containers</p>
+<p><strong>docker stop:</strong>  The docker stop {container-id} will stop the container, the container ID needs to be provided as argument.</p>
+<p><strong>docker rm :</strong> The remove a container permanently, we can use the docker rm {container-id} command.</p>
+<p><strong>docker images :</strong> we can use the docker images command to list the docker images on our host.</p>
+<p><strong>docker rmi</strong>  We can use the docker rmi {image-name} command to remove an image from the system. it has to be noted that no containers should be running based out of this image.</p>
+<p><strong>docker pull:</strong>  the docker pull {image-name} will only download the image from docker hub but will not create a container out of it.</p>
+<p>Let&rsquo;s say, we were to create a docker container for the ubuntu image with the docker run ubuntu command. It will run the instance of ubuntu &amp; exists immediately. The reason for this is because containers are not meant to host operating systems. Containers are meant to run a specific task such as to host an instance of web server, or an instance of database or simply to carry some kind of computational or analysis task. Once the task is complete, the container will exit.</p>
+<p>Ubuntu operating system once starts does not run any service. Hence it will exit. We can pass or append additional commands such as below</p>
+<pre tabindex="0"><code>docker run ubuntu sleep 5 
+</code></pre><p>If you want to execute a command on a running container, this is the format:</p>
+<p>docker exec {image-name} {command}
+Example : docker exec {image-name} cat /etc/hosts</p>
+<p><strong>Docker Run - Port Mapping :</strong>
+When we run a containerized application, how does the user access the application ? Every docker container gets its own IP by default. This IP is only accessible from the docker Host.</p>
+<p>If users want to access the application, they can access it using the Host IP address. But the port that user is trying on should be mapped to the port number on the container.</p>
+<p><strong>Example :</strong> Let us say that there is a docker container which is running on a host with the IP address 192.168.1.1. The application inside the docker container is running on port 5000 &amp; the user from outside is trying to access the application on port 80 with the host IP address. Then there should be a mapping created between the port numbers.</p>
+<p>This way, you can run multiple instances of the docker containers &amp; map them to different ports on the host.</p>
+<pre tabindex="0"><code>docker run -p {host-port}:{Container port} {image-name}
+</code></pre><p><strong>How does Docker Store Data :</strong></p>
+<p>Docker containers have their own file system &amp; any changes to any file are local to the container. As soon as you remove the container all the data inside the container is gone. If you want to retain the data when the container is deleted, you would need to map the data to a directory outside the container on the host.</p>
+<pre tabindex="0"><code>docker run -v {directory-outside}:{directory-inside} {image-name}
+Ex: docker run -v /opt/datadir: /var/mysql mysql
+</code></pre><p><strong>See additional details about the container :</strong></p>
+<p>This command returns details about a specific container in Json format.</p>
+<pre tabindex="0"><code>docker inspect {container-name}
+</code></pre><p><strong>View logs of container :</strong></p>
+<p>Use the below command to view logs related to a container. You have to run the container with the option &ldquo;-d&rdquo; &amp; run it in a detached mode to view the logs relating to it on the host.</p>
+<pre tabindex="0"><code>docker logs {container-name}
+</code></pre>
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>::ethernetdude.com</span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
