@@ -4,17 +4,23 @@
   <url>
     <loc>/docker/basic-docker-commands/</loc>
   </url><url>
+    <loc>/docker/docker-basic-concepts--commands/</loc>
+  </url><url>
     <loc>/tags/blogpost/</loc>
   </url><url>
     <loc>/categories/</loc>
   </url><url>
     <loc>/tags/docker/</loc>
   </url><url>
+    <loc>/docker/creating-your-own-docker-images/</loc>
+  </url><url>
     <loc>/docker/</loc>
   </url><url>
     <loc>/</loc>
   </url><url>
     <loc>/tags/ethernetdude/</loc>
+  </url><url>
+    <loc>/tags/ethernetdude-docker/</loc>
   </url><url>
     <loc>/home/</loc>
   </url><url>
