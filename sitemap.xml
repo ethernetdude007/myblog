@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/tags/aboutme/</loc>
+  </url><url>
+    <loc>/aboutme/</loc>
+  </url><url>
     <loc>/docker/docker-basic-concepts--commands/</loc>
   </url><url>
     <loc>/tags/blogpost/</loc>
@@ -23,6 +27,8 @@
     <loc>/tags/</loc>
   </url><url>
     <loc>/docker/why-docker/</loc>
+  </url><url>
+    <loc>/aboutme/about-me/</loc>
   </url><url>
     <loc>/home/why-i-started-this-blog/</loc>
   </url>

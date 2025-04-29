@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Aboutmes on ethernetdude</title>
-    <link>/aboutme/</link>
-    <description>Recent content in Aboutmes on ethernetdude</description>
+    <title>Aboutme on ethernetdude</title>
+    <link>/tags/aboutme/</link>
+    <description>Recent content in Aboutme on ethernetdude</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="/aboutme/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/aboutme/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Who am I ?</title>
       <link>/aboutme/about-me/</link>
