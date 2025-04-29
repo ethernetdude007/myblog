@@ -29,6 +29,13 @@
       <description>&lt;p&gt;Docker lets us run each component in a separate container with its own dependencies &amp;amp; libraries. This let&amp;rsquo;s us run the application irrespective of the operating system we are using.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;What are Containers ?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Containers are isolated environments, which can have their own processes, network &amp;amp; mounts just like virtual machines except that they all share the same OS kernel.&lt;/p&gt;&#xA;&lt;p&gt;If you look at operating systems like Ubuntu, Fedora, Centos etc.. They all contain a OS Kernel &amp;amp; Software. The OS kernel is responsible for interacting with the Hardware &amp;amp; Software consists of things like drivers, user interface , etc.. So all these operating systems have the same linux Kernel.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Who am I ?</title>
+      <link>/aboutme/about-me/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/aboutme/about-me/</guid>
+      <description>&lt;p&gt;Hi, I&amp;rsquo;m Kapil. I&amp;rsquo;ve been a network engineer for almost 13 years now, working with everything from routing and switching to data center technologies and security. Over the years, I’ve been lucky to work on a wide range of networks — some simple, some massive — and that hands-on experience has shaped not just my technical skills, but also the way I approach learning and problem-solving.&lt;/p&gt;&#xA;&lt;p&gt;But if I&amp;rsquo;m honest, for a long time, I had a problem: I would read books, articles, technical documents — and while I enjoyed learning, much of it would slip away over time. I kept thinking, &lt;em&gt;&amp;ldquo;How can I actually hold onto all this knowledge?&amp;rdquo;&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Why &amp; How I started this Blog</title>
       <link>/home/why-i-started-this-blog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
