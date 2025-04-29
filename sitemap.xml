@@ -14,6 +14,8 @@
   </url><url>
     <loc>/tags/docker/</loc>
   </url><url>
+    <loc>/docker/docker-compose/</loc>
+  </url><url>
     <loc>/docker/creating-your-own-docker-images/</loc>
   </url><url>
     <loc>/docker/</loc>

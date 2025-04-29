@@ -15,6 +15,13 @@
       <description>&lt;p&gt;&lt;strong&gt;docker run :&lt;/strong&gt; The docker run command is used to create a container from an image. for example, docker run ngnix command will create an instance from the image. if the image is not present on the host, it will try to get a copy of image from docker hub if it is available there.**&lt;/p&gt;&#xA;&lt;p&gt;You can also run docker run command in detach mode by using the option &amp;ldquo;-d&amp;rdquo;. This will simply run the container in background while you can continue to perform your other tasks.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Docker Compose</title>
+      <link>/docker/docker-compose/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docker/docker-compose/</guid>
+      <description>&lt;p&gt;If we want to run a complex application using multiple services, a better way to do it is to use docker compose.&lt;/p&gt;&#xA;&lt;p&gt;Docker compose is a file written in YAML format. We can put together multiple services running in this file &amp;amp; then use the &lt;code&gt;docker compose up&lt;/code&gt; command to bring up the entire application stack. It should be noted that this is applicable to containers running on a single host.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Docker images</title>
       <link>/docker/creating-your-own-docker-images/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
