@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Docker storage &amp; Networking :: ethernetdude</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Docker Storage: When you install docker on a machine it creates a folder structure under /var/lib/docker. This will have multiple sub folder. all the files related to containers are stored under /var/lib/docker/containers &amp; all the files related to images are stored under /var/lib/docker/images folder.
+If you remember from the notes about [[Creating your own docker images]] we learnt that docker builds images in a layered architecture.
+Since each layer only stores the changes from the previous layer, it is reflected on the size a well.
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="/docker/docker-storage--networking/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="/css/code.min.4f0ccc8439f99bf7f7970298556b94011aabc1fcae743b6842fc3361a2da9ea3.css">
+
+  
+  <link rel="stylesheet" href="/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Docker storage &amp; Networking">
+<meta property="og:description" content="Docker Storage: When you install docker on a machine it creates a folder structure under /var/lib/docker. This will have multiple sub folder. all the files related to containers are stored under /var/lib/docker/containers &amp; all the files related to images are stored under /var/lib/docker/images folder.
+If you remember from the notes about [[Creating your own docker images]] we learnt that docker builds images in a layered architecture.
+Since each layer only stores the changes from the previous layer, it is reflected on the size a well.
+" />
+<meta property="og:url" content="/docker/docker-storage--networking/" />
+<meta property="og:site_name" content="ethernetdude" />
+
+  <meta property="og:image" content="/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container full">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    ethernetdude
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/home">Home</a></li>
+        
+      
+        
+          <li><a href="/aboutme/">About Me</a></li>
+        
+      
+        
+          <li><a href="/docker/"> Docker</a></li>
+        
+      
+        
+          <li><a href="/automation/">Automation</a></li>
+        
+      
+        
+          <li><a href="/gcp/">Google Cloud</a></li>
+        
+      
+        
+          <li><a href="/networking/">Networking</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/home" >Home</a></li>
+        
+      
+        
+          <li><a href="/aboutme/" >About Me</a></li>
+        
+      
+      
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">Contents&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                
+                  
+                    <li><a href="/docker/" > Docker</a></li>
+                  
+                
+                  
+                    <li><a href="/automation/" >Automation</a></li>
+                  
+                
+                  
+                    <li><a href="/gcp/" >Google Cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/networking/" >Networking</a></li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="/docker/docker-storage--networking/">Docker storage &amp; Networking</a>
+  </h1>
+  <div class="post-meta"></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="/tags/docker/">Docker</a>&nbsp;
+      
+      #<a href="/tags/ethernetdude/">ethernetdude</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p><strong>Docker Storage:</strong> When you install docker on a machine it creates a folder structure under /var/lib/docker. This will have multiple sub folder. all the files related to containers are stored under /var/lib/docker/containers &amp; all the files related to images are stored under /var/lib/docker/images folder.</p>
+<p>If you remember from the notes about [[Creating your own docker images]] we learnt that docker builds images in a layered architecture.</p>
+<p>Since each layer only stores the changes from the previous layer, it is reflected on the size a well.</p>
+<p>Let&rsquo;s say we have 2 different applications &amp; the images are created from different docker files. Let&rsquo;s say if both the images use the same ubuntu as base layer, Python as the language the code is written, Docker is not going to build them again. It uses the same layers it created before &amp; only changes the information that has changed.</p>
+<table>
+  <thead>
+      <tr>
+          <th>==Application 1==</th>
+          <th>==Application 2==</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>==Layer1: Ubuntu base image==</td>
+          <td>==Layer1: Ubuntu base image==</td>
+      </tr>
+      <tr>
+          <td>==Layer2: Changes in Apt packages==</td>
+          <td>==Layer2: Change in Apt packages==</td>
+      </tr>
+      <tr>
+          <td>==Layer3: Changes in PIP Packages==</td>
+          <td>==Layer3: Changes in PIP Packages==</td>
+      </tr>
+      <tr>
+          <td>Layer4: Source Code</td>
+          <td>Layer4: Source Code</td>
+      </tr>
+      <tr>
+          <td>Layer5: Update Entrypoint</td>
+          <td>Layer5: Update Entrypoint</td>
+      </tr>
+      <tr>
+          <td>The first three layers are same for both applications. Hence docker does not repeat the process of building the first three layers, hence saving time &amp; space.</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<p>All these layers are created when we use the docker build command to form the final image. Once the image is built, these are fixed &amp; becomes read only. The only way to modify them is by initiating a new build.</p>
+<p>==When you create a docker container, docker creates a new writable layer on top of the image layer. This layer is used by docker to store data created by the container, any files modified by the user, logs etc.. The life of this layer is only as long as the container is alive.==</p>
+<p>Now let us say that I want to modify a piece of code and test a new feature or something. Does this mean I cannot modify the code in a running container ? No, you can still modify and test but docker will not change the image instead will create a new copy of the file on the running container from the image which can be modified.</p>
+<p>The data on a container will be destroyed when a container is destroyed. if you wish to store the information created by the container then you will have to use the command mentioned below. This will mount the volume to /var/lib/docker/volumes/{volume-name}</p>
+<pre tabindex="0"><code>docker volume create {volume-name}
+</code></pre><p>Later, when you create another container, you can attach this volume using the -V option to the docker run command</p>
+<pre tabindex="0"><code>docker run -v {volume-name}: /var/lib/ {image-name}
+</code></pre><p>Lets say we have an external storage on the host and we would like to store the data there instead of the default folder. In that case, we have to specify the complete path.</p>
+<pre tabindex="0"><code>docker run -v /data/{folder-name} : /var/lib/{folder-name} {image-name}
+</code></pre><p>The storage drivers are responsible for performing these operations. The drivers available on the host depends on the operating system.</p>
+<p>Few names of storage drivers are as follows, AUFS, ZFS,BTRFS, Overlay &amp; Overlay 2. In case of ubuntu the storage driver is AUFS, in case of Fedora it is ZFS</p>
+<p>Docker will automatically choose the storage driver automatically. To find out what storage driver you can use the <code>docker info</code> command.</p>
+
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>::ethernetdude.com</span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

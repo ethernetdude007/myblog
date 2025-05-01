@@ -72,4 +72,3 @@ Now, if you want to make this change permanent, then you should use the base ima
 
 For example, in a docker file if you have the entry point as sleep & the cmd as 5, then the command that would be run at startup of container is sleep 5.
 
-
