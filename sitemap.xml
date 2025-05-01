@@ -12,11 +12,19 @@
   </url><url>
     <loc>/categories/</loc>
   </url><url>
+    <loc>/docker/deploying-our-first-application-with-docker/</loc>
+  </url><url>
     <loc>/tags/docker/</loc>
   </url><url>
     <loc>/docker/docker-compose/</loc>
   </url><url>
+    <loc>/docker/docker-engine/</loc>
+  </url><url>
     <loc>/docker/creating-your-own-docker-images/</loc>
+  </url><url>
+    <loc>/docker/docker-registry/</loc>
+  </url><url>
+    <loc>/docker/docker-storage--networking/</loc>
   </url><url>
     <loc>/docker/</loc>
   </url><url>

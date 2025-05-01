@@ -2,16 +2,19 @@
 <html lang="en">
 <head>
   
-    <title>Tags :: ethernetdude</title>
+    <title>Docker Engine :: ethernetdude</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="" />
+<meta name="description" content="Docker Engine as we discussed before is simply referred to a host with docker installed on it. When we install docker on a machine, three different components are installed.
+![[Screenshot 2025-05-01 at 4.32.54 PM.png | 500]]
+The docker Deamon is a background process that manages such as images, volumes, containers &amp; networks. The docker rest api is that programs can use to talk to the docker deamon. Docker CLI is the command line interface that we are interacting with.
+" />
 <meta name="keywords" content="" />
 
   <meta name="robots" content="noodp" />
 
-<link rel="canonical" href="/tags/" />
+<link rel="canonical" href="/docker/docker-engine/" />
 
 
 
@@ -71,10 +74,13 @@
 
 
 <meta property="og:locale" content="en" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Tags">
-<meta property="og:description" content="" />
-<meta property="og:url" content="/tags/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Docker Engine">
+<meta property="og:description" content="Docker Engine as we discussed before is simply referred to a host with docker installed on it. When we install docker on a machine, three different components are installed.
+![[Screenshot 2025-05-01 at 4.32.54 PM.png | 500]]
+The docker Deamon is a background process that manages such as images, volumes, containers &amp; networks. The docker rest api is that programs can use to talk to the docker deamon. Docker CLI is the command line interface that we are interacting with.
+" />
+<meta property="og:url" content="/docker/docker-engine/" />
 <meta property="og:site_name" content="ethernetdude" />
 
   <meta property="og:image" content="/og-image.png">
@@ -85,8 +91,6 @@
 
 
 
-
-  <link href="/tags/index.xml" rel="alternate" type="application/rss+xml" title="ethernetdude" />
 
 
 
@@ -201,46 +205,54 @@
 
   <div class="content">
     
-  <div class="terms">
-    <h1>Tags</h1>
+<article class="post">
+  <h1 class="post-title">
+    <a href="/docker/docker-engine/">Docker Engine</a>
+  </h1>
+  <div class="post-meta"></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="/tags/docker/">Docker</a>&nbsp;
+      
+      #<a href="/tags/ethernetdude/">ethernetdude</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>Docker Engine as we discussed before is simply referred to a host with docker installed on it. When we install docker on a machine, three different components are installed.</p>
+<p>![[Screenshot 2025-05-01 at 4.32.54 PM.png | 500]]</p>
+<p>The docker Deamon is a background process that manages such as images, volumes, containers &amp; networks. The docker rest api is that programs can use to talk to the docker deamon. Docker CLI is the command line interface that we are interacting with.</p>
+<p>It is important to understand that the docker CLI need not necessarily be on the same host. It can be on a different remote machine.</p>
+<pre tabindex="0"><code>docker -H={remote-docker-engine:2375}
+</code></pre><p>for example, to run a a nginx engine on a remote host. use the following format.</p>
+<pre tabindex="0"><code>docker -H={remote-docker-engine-IP:2375} run nginx
+</code></pre><p>Now, let us understand how exactly our applications are containerized in docker. Docker uses, namespaces to isolate work space. Process ID&rsquo;S unix timesharing, Network, Mount &amp; Interprocess are created in their own name space there by providing isolation between containers.</p>
+<p>!<img src="/images/Pasted%20image%2020250501173256.png" alt="Image Description"></p>
+<p>let us try to understand one of the namespace isolation technique, process ID. When ever a linux system boots up, it starts with just one process &amp; process ID 1. This is the root process, by the time the system boots up, we will have lot of processes running. The process ID&rsquo;s are unique &amp; 2 processes cannot have the same process ID. Now, if we are running a container in the linux host, lets say nginx, it will boot with a process ID of 1 as well. but in the host operating system point of view, it is not Process ID of 1 &amp; it is referred as just another process with a number.</p>
+<p>Docker also uses cggroup to restrict the amount of resources allocated to each container. By default there is no restriction.</p>
+<p>if you want to restrict the amount of memory or CPU a container can use. you can use the below commands</p>
+<pre tabindex="0"><code>%%this allocates, 50 percent of the cpu to the container%%
+docker run --cpu=.5 {container-name}
+
+%%this allocates 100Mb of memory to the container%%
+docker run --memory=100m {container-name}
+</code></pre>
+      </div></div>
+
+  
+
+  
     
-    <ul>
-      
-      
-        
-        
-        
-          <li>
-            <a class="terms-title" href="/tags/aboutme/">aboutme [1]</a>
-          </li>
-        
-      
-        
-        
-        
-          <li>
-            <a class="terms-title" href="/tags/blogpost/">Blogpost [1]</a>
-          </li>
-        
-      
-        
-        
-        
-          <li>
-            <a class="terms-title" href="/tags/docker/">Docker [8]</a>
-          </li>
-        
-      
-        
-        
-        
-          <li>
-            <a class="terms-title" href="/tags/ethernetdude/">ethernetdude [10]</a>
-          </li>
-        
-      
-    </ul>
-  </div>
+
+  
+</article>
 
   </div>
 

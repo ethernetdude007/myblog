@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Deploying our first application with Docker :: ethernetdude</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="We are going to deploy the Voting app using Docker. It has to be noted, that this application is not written by me &amp; I am simply using an app that is available in GitHub.
+The application is available on this URL : Click Here I am going to download this application to my ubuntu machine.
+git clone https://github.com/dockersamples/example-voting-app.git !
+Now, if you navigate inside the vote directory, you will notice a dockerfile using which we are going to build a docker image.
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="/docker/deploying-our-first-application-with-docker/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="/css/code.min.4f0ccc8439f99bf7f7970298556b94011aabc1fcae743b6842fc3361a2da9ea3.css">
+
+  
+  <link rel="stylesheet" href="/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Deploying our first application with Docker">
+<meta property="og:description" content="We are going to deploy the Voting app using Docker. It has to be noted, that this application is not written by me &amp; I am simply using an app that is available in GitHub.
+The application is available on this URL : Click Here I am going to download this application to my ubuntu machine.
+git clone https://github.com/dockersamples/example-voting-app.git !
+Now, if you navigate inside the vote directory, you will notice a dockerfile using which we are going to build a docker image.
+" />
+<meta property="og:url" content="/docker/deploying-our-first-application-with-docker/" />
+<meta property="og:site_name" content="ethernetdude" />
+
+  <meta property="og:image" content="/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container full">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    ethernetdude
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/home">Home</a></li>
+        
+      
+        
+          <li><a href="/aboutme/">About Me</a></li>
+        
+      
+        
+          <li><a href="/docker/"> Docker</a></li>
+        
+      
+        
+          <li><a href="/automation/">Automation</a></li>
+        
+      
+        
+          <li><a href="/gcp/">Google Cloud</a></li>
+        
+      
+        
+          <li><a href="/networking/">Networking</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/home" >Home</a></li>
+        
+      
+        
+          <li><a href="/aboutme/" >About Me</a></li>
+        
+      
+      
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">Contents&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                
+                  
+                    <li><a href="/docker/" > Docker</a></li>
+                  
+                
+                  
+                    <li><a href="/automation/" >Automation</a></li>
+                  
+                
+                  
+                    <li><a href="/gcp/" >Google Cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/networking/" >Networking</a></li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="/docker/deploying-our-first-application-with-docker/">Deploying our first application with Docker</a>
+  </h1>
+  <div class="post-meta"></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="/tags/ethernetdude/">ethernetdude</a>&nbsp;
+      
+      #<a href="/tags/docker/">Docker</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>We are going to deploy the Voting app using Docker. It has to be noted, that this application is not written by me &amp; I am simply using an app that is available in GitHub.</p>
+<p>The application is available on this URL : <a href="https://github.com/dockersamples/example-voting-app.git">Click Here
+</a></p>
+<p>I am going to download this application to my ubuntu machine.</p>
+<pre tabindex="0"><code>git clone https://github.com/dockersamples/example-voting-app.git
+</code></pre><p>!<img src="/images/Pasted%20image%2020250429205638.png" alt="Image Description"></p>
+<p>Now, if you navigate inside the vote directory, you will notice a dockerfile using which we are going to build a docker image.</p>
+<pre tabindex="0"><code>sudo docker build . -t voting-app
+</code></pre><p>Now, let us create a container from the image for the voting-app . I am mapping port 5000 to port 80 so that it can be accessed externally.</p>
+<pre tabindex="0"><code>docker run -d -p 5000:80 voting-app
+</code></pre><p>Now, if I try the url, I can access the application but if I try to vote. I will get an Internal server error as there is no redis instance linked to this. Below is the screenshot of the Voting App.</p>
+<p>!<img src="/images/Pasted%20image%2020250429210905.png" alt="Image Description"></p>
+<p>Now I am going to run a container for redis &amp; name it as redis</p>
+<pre tabindex="0"><code>docker run -d --name=redis redis
+</code></pre><p>Now, I am going to run the voting application again &amp; link the redis container to it using the below command.</p>
+<pre tabindex="0"><code>docker run -p 5000:80 --link redis:redis voting-app
+</code></pre><p>Now, when i try to cast the vote, i don&rsquo;t get an error &amp; get a ticket mark instead as redis is running.</p>
+<p>Now, before we run the Worker app, postgres is mandatory. so we have to run a container for postgresql. it should be noted that the -e POSTGRES_HOST_AUTH_METHOD=trust should only be used in lab</p>
+<pre tabindex="0"><code>docker run   -d -e POSTGRES_HOST_AUTH_METHOD=trust --name=db  postgres:15-alpine
+</code></pre><p>Now navigate to the worker directory &amp; build the worker image using the dockerfile</p>
+<pre tabindex="0"><code>docker build . -t  worker-app
+</code></pre><p>The worker-app will require 2 links, one with redis &amp; another with postgresql.</p>
+<pre tabindex="0"><code>docker run -d --link redis:redis --link db:db --name=worker-app worker-app
+</code></pre><p>Now go to the result-app directory &amp; build the docker image using the docker file.</p>
+<pre tabindex="0"><code>docker build . -t result-app
+</code></pre><p>Run the docker image &amp; do the port-mapping and link it to the postgresql db.</p>
+<pre tabindex="0"><code>docker run -d -p 5001:80 --link db:db result-app
+</code></pre><p>Now I can see all my containers running &amp; whenever I cast my vote, the result in the application changes.</p>
+<p>!<img src="/images/Pasted%20image%2020250429223852.png" alt="Image Description"></p>
+<p><strong>Deploying the same application using Docker-Compose:</strong></p>
+<p>Now, let us see how we can deploy the same application stack using docker compose. You have to install docker compose, separately. The instructions for installing docker compose can be found on docker hub.</p>
+<pre tabindex="0"><code>redis:
+  image: redis
+
+
+dB:
+  image: postgres:15-alpine
+
+
+vote:
+  image: voting-app
+  ports:
+    - 5000:80
+  links:
+    - redis
+
+worker:
+  image: worker:app
+  links:
+    - redis
+    - dB
+
+result:
+  image: result-app
+  ports:
+    - 5001:80
+  links:
+    - dB
+</code></pre><p>the same with the newer version can be written as below. It has to be noted that docker version 3 does not require you to specify the links.</p>
+<pre tabindex="0"><code>version: &#34;3&#34;
+services:
+
+  redis:
+    image: redis
+
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      -  POSTGRES_HOST_AUTH_METHOD=trust
+
+
+  votes:
+    image: voting-app
+    ports:
+      - 5000:80
+
+  result:
+    image: result-app
+    ports:
+      - 5001:80
+
+  worker:
+    image: worker-app
+</code></pre><p>Now, I am going to run the docker-compose up command &amp; the containers should be created &amp; I should be able to run the app &amp; I can see the result as I casted my vote to Cats.</p>
+<p>!<img src="/images/Pasted%20image%2020250501045644.png" alt="Image Description"></p>
+
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>::ethernetdude.com</span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

@@ -15,6 +15,13 @@
       <description>&lt;p&gt;&lt;strong&gt;docker run :&lt;/strong&gt; The docker run command is used to create a container from an image. for example, docker run ngnix command will create an instance from the image. if the image is not present on the host, it will try to get a copy of image from docker hub if it is available there.**&lt;/p&gt;&#xA;&lt;p&gt;You can also run docker run command in detach mode by using the option &amp;ldquo;-d&amp;rdquo;. This will simply run the container in background while you can continue to perform your other tasks.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Deploying our first application with Docker</title>
+      <link>/docker/deploying-our-first-application-with-docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docker/deploying-our-first-application-with-docker/</guid>
+      <description>&lt;p&gt;We are going to deploy the Voting app using Docker. It has to be noted, that this application is not written by me &amp;amp; I am simply using an app that is available in GitHub.&lt;/p&gt;&#xA;&lt;p&gt;The application is available on this URL : &lt;a href=&#34;https://github.com/dockersamples/example-voting-app.git&#34;&gt;Click Here&#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;I am going to download this application to my ubuntu machine.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git clone https://github.com/dockersamples/example-voting-app.git&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;!&lt;img src=&#34;/images/Pasted%20image%2020250429205638.png&#34; alt=&#34;Image Description&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Now, if you navigate inside the vote directory, you will notice a dockerfile using which we are going to build a docker image.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Docker Compose</title>
       <link>/docker/docker-compose/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -22,11 +29,32 @@
       <description>&lt;p&gt;If we want to run a complex application using multiple services, a better way to do it is to use docker compose.&lt;/p&gt;&#xA;&lt;p&gt;Docker compose is a file written in YAML format. We can put together multiple services running in this file &amp;amp; then use the &lt;code&gt;docker compose up&lt;/code&gt; command to bring up the entire application stack. It should be noted that this is applicable to containers running on a single host.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Docker Engine</title>
+      <link>/docker/docker-engine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docker/docker-engine/</guid>
+      <description>&lt;p&gt;Docker Engine as we discussed before is simply referred to a host with docker installed on it. When we install docker on a machine, three different components are installed.&lt;/p&gt;&#xA;&lt;p&gt;![[Screenshot 2025-05-01 at 4.32.54 PM.png | 500]]&lt;/p&gt;&#xA;&lt;p&gt;The docker Deamon is a background process that manages such as images, volumes, containers &amp;amp; networks. The docker rest api is that programs can use to talk to the docker deamon. Docker CLI is the command line interface that we are interacting with.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Docker images</title>
       <link>/docker/creating-your-own-docker-images/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/docker/creating-your-own-docker-images/</guid>
       <description>&lt;p&gt;in case, if you are developing an application &amp;amp; decide to run it as container or if you want to install something as a container that is not available on docker hub, then you would have to create your own docker image.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;How to create your image ?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;First, create a file named &amp;ldquo;dockerfile&amp;rdquo; &amp;amp; write down the instructions such as where to copy the source code from, what is the entry point &amp;amp; where to install the application etc..&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Docker Resistry</title>
+      <link>/docker/docker-registry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docker/docker-registry/</guid>
+      <description>&lt;p&gt;Docker images are stored in the docker registry. When we run a docker command line &lt;code&gt;docker run ngnix&lt;/code&gt; the image is being pulled from the docker.io library&lt;/p&gt;&#xA;&lt;p&gt;By default, the library prefix is used indicating an official docker Hub image. However, there is an option for us to create our custom images &amp;amp; store them.&lt;/p&gt;&#xA;&lt;p&gt;Where we store these images ? we can store these images on cloud provider like google cloud or azure &amp;amp; make them not accessible publicly.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Docker storage &amp; Networking</title>
+      <link>/docker/docker-storage--networking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docker/docker-storage--networking/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Docker Storage:&lt;/strong&gt; When you install docker on a machine it creates a folder structure under /var/lib/docker. This will have multiple sub folder. all the files related to containers are stored under /var/lib/docker/containers &amp;amp; all the files related to images are stored under /var/lib/docker/images folder.&lt;/p&gt;&#xA;&lt;p&gt;If you remember from the notes about [[Creating your own docker images]] we learnt that docker builds images in a layered architecture.&lt;/p&gt;&#xA;&lt;p&gt;Since each layer only stores the changes from the previous layer, it is reflected on the size a well.&lt;/p&gt;</description>
     </item>
     <item>
       <title>What is the need for Docker &amp; How they are different from Virtual Machines</title>
